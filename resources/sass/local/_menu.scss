@@ -1,0 +1,151 @@
+
+.side_bar {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 80px;
+	background: #11101d;
+	padding: 6px 14px;
+
+	&.active {
+		width: 240px;
+		.logo_content {
+			.logo {
+				opacity: 1;
+				pointer-events: none;
+			}
+		}
+		#btn {
+			left:90%;
+		}
+		.link_name {
+			opacity: 1;
+			pointer-events: none;
+		}
+		ul {
+			li {
+				.tooltip {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.logo_content {
+		.logo {
+			color: #fff;
+			display: flex;
+			height: 50px;
+			width: 100%;
+			align-items: center;
+			opacity: 0;
+			pointer-events: none;
+			i {
+				margin-right: 5px;
+				font-size: 30px;
+			}
+			.logo_name {
+				font-size: 30px;
+				font-weight: 400;
+			}
+		}
+	}
+	#btn {
+		position: absolute;
+		left:50%;
+		color: #fff;
+		top: 0;
+		font-size: 20px;
+		height: 50px;
+		width: 50px;
+		text-align: center;
+		line-height: 50px;
+		transform: translateX(-50%);
+	}
+	.link_name {
+		opacity: 0;
+		pointer-events: none;
+	}
+	ul {
+		margin-top: 20px;
+		li {
+			position: relative;
+			height: 50px;
+			width: 100%;
+			margin: 0 5px;
+			list-style: none;
+			line-height: 50px;
+			.tooltip {
+				position: absolute;
+				left: 62px;
+				top: 0;
+				transform: translateY(-50%);
+				border-radius: 6px;
+				height: 35px;
+				width: 122px;
+				background: #fff;
+				line-height: 35px;
+				text-align: center;
+				box-shadow: 0 5px 10px rgba(0, 0,0, .2);
+				transition: 0s;
+				opacity: 0;
+				pointer-events: none;
+				display: block;
+			}
+			&:hover {
+				.tooltip {
+					top: 20px;
+					transition: all .5s ease;
+					opacity: 1;
+				}
+			}
+			input {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				left: 0;
+				top: 0;
+				border-radius: 12px;
+				outline: none;
+				border: none;
+				background: #1d1b31;
+				padding-left: 50px;
+				color: #fff;
+				font-size: 18px;
+			}
+			.bx-search {
+				position: absolute;
+				z-index: 99;
+				color: #fff;
+				font-size: 22px;
+				transition: all .5s ease ;
+				border-radius: 12px;
+			}
+			.bx-search:hover {
+				background: #fff;
+				color: #1d1b31;
+				border-radius: 12px;
+			}
+			a {
+				color: #fff;
+				display: flex;
+				align-items: center;
+				text-decoration: none;
+				transition: all .4s ease;
+				border-radius: 12px;
+				white-space: nowrap;
+				&:hover {
+					background: #fff;
+					color: #11101d;
+				}
+			}
+			i {
+				height: 50px;
+				min-width: 50px;
+				text-align: center;
+				line-height: 50px;
+			}
+		}
+	}
+}
