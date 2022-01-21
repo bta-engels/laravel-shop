@@ -35,7 +35,7 @@
             <span class="tooltip">Dashboard</span>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ route('products') }}">
                 <i class='bx bx-user'></i>
                 <span class="link_name">{{ __('Products') }}</span>
             </a>
