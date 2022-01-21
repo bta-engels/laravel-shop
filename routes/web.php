@@ -24,6 +24,6 @@ Route::get('/dashboard', function () {
 Route::get('logout', function () {
     Auth::logout();
     return response()->redirectTo('/');
-});
+})->name('my-logout');
 
 require __DIR__.'/auth.php';

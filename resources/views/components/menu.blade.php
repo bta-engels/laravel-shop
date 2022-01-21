@@ -14,7 +14,7 @@
         </li>
         <li>
             @auth
-                <a href="{{ route('logout') }}">
+                <a href="{{ route('my-logout') }}">
                     <i class='bx bx-user'></i>
                     <span class="link_name">{{ __('Logout') }}</span>
                 </a>
