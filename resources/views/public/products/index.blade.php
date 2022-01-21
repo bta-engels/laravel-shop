@@ -4,20 +4,20 @@
 @section('header', __('Products'))
 
 @section('content')
-
+@if($data && $data->count() > 0)
     <table class="table-auto">
         <tr>
-            <th>Id</th>
+            <th>ID</th>
             <th>Name</th>
         </tr>
-        @foreach($data as $item)
+    @foreach($data as $item)
         <tr>
             <td>{{ $item->id }}</td>
-            <!--td><a href="{{ route('product.show',$item) }}">{{ $item->name }}</a></td-->
-            <td><a href="/products/{{ $item->id }}">{{ $item->name }}</a></td>
-         </tr>
-        @endforeach
-
+            <td><a href="{{ route('products.show', $item) }}">{{ $item->name }}</a></td>
+        </tr>
+    @endforeach
     </table>
-
+@else
+    <h3>Keine Daten vorhanden</h3>
+@endif
 @endsection
