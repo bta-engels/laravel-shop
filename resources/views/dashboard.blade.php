@@ -4,5 +4,5 @@
 @section('header', __('Dashboard'))
 
 @section('content')
-    <p>You're logged in!</p>
+    <p>Du bist eingeloggt!</p>
 @endsection
