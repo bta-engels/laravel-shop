@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,5 +25,9 @@ Route::get('logout', function () {
     Auth::logout();
     return response()->redirectTo('/');
 })->name('my-logout');
+
+Route::get( '/products', [ProductController::class, 'index']);
+
+Route::get( '/products/{product}', [ProductController::class, 'show']);
 
 require __DIR__.'/auth.php';
