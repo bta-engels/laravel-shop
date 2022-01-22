@@ -36,14 +36,14 @@
         </li>
         <li>
             <a href="{{ route('products') }}">
-                <i class='bx bx-user'></i>
+                <i class='bx bxl-product-hunt'></i>
                 <span class="link_name">{{ __('Products') }}</span>
             </a>
             <span class="tooltip">{{ __('Products') }}</span>
         </li>
         <li>
             <a href="{{ route('manufacturers') }}">
-                <i class='bx bx-message-dots'></i>
+                <i class='bx bxs-factory'></i>
                 <span class="link_name">Manufacturers</span>
             </a>
             <span class="tooltip">Manufacturers</span>
