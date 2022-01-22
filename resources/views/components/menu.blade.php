@@ -35,18 +35,18 @@
             <span class="tooltip">Dashboard</span>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ route('products') }}">
                 <i class='bx bx-user'></i>
                 <span class="link_name">{{ __('Products') }}</span>
             </a>
             <span class="tooltip">{{ __('Products') }}</span>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ route('manufacturers') }}">
                 <i class='bx bx-message-dots'></i>
-                <span class="link_name">Message</span>
+                <span class="link_name">Manufacturers</span>
             </a>
-            <span class="tooltip">Message</span>
+            <span class="tooltip">Manufacturers</span>
         </li>
         <li>
             <a href="#">

@@ -1,7 +1,8 @@
 <?php
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ManufacturerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/products', [ProductController::class,'index'])->name('products');
+Route::get('/products/{product}', [ProductController::class,'show'])->name('products.show');
+
+Route::get('/manufacturers', [ManufacturerController::class,'index'])->name('manufacturers');
+Route::get('/manufacturers/{manufacturer}', [ManufacturerController::class,'show'])->name('manufacturers.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
