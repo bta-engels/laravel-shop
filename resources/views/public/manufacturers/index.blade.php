@@ -13,13 +13,17 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($data as $item)
-            <tr>
-                <td>{{$item->id}}</td>
-                <td>{{$item->name}}</td>
-                <td> <a href="{{ route('manufacturers.show',$item)}}"> {{$item->name}}</a></td>
-            </tr>
-        @endforeach
+            @if ($data->count() >0)
+                @foreach($data as $item)
+                    <tr>
+                        <td>{{$item->id}}</td>
+                        <td>{{$item->name}}</td>
+                        <td> <a href="{{ route('manufacturers.show',$item)}}"> {{$item->name}}</a></td>
+                    </tr>
+                @endforeach
+            @else
+                <span>Kein Datein vorhanden</span>
+            @endif
         </tbody>
     </table>
 @endsection

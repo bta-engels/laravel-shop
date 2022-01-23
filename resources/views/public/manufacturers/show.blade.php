@@ -6,7 +6,7 @@
 
 @section('content')
     <div>
-
+        
         <p>{{$manufacturer->description}}</p>
     </div>
 @endsection

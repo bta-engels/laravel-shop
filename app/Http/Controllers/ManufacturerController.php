@@ -48,7 +48,7 @@ class ManufacturerController extends Controller
      */
     public function show(Manufacturer $manufacturer)
     {
-        return view('public.manufacturers.index',compact('manufacturer'));
+        return view('public.manufacturers.show',compact('manufacturer'));
     }
 
     /**

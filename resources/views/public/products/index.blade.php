@@ -13,13 +13,15 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($data as $item)
-                <tr>
-                    <td>{{$item->id}}</td>
-                    <td>{{$item->name}}</td>
-                    <td> <a href="{{ route('products.show',$item)}}"> {{$item->name}}</a></td>
-                </tr>
-            @endforeach
+            @if ($data->count() > 0)
+                @foreach($data as $item)
+                    <tr>
+                        <td>{{$item->id}}</td>
+                        <td>{{$item->name}}</td>
+                        <td> <a href="{{ route('products.show',$item)}}"> {{$item->name}}</a></td>
+                    </tr>
+                @endforeach
+            @endif
         </tbody>
     </table>
 @endsection
