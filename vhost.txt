@@ -9,7 +9,7 @@ für windows (C:\xampp\apache\etc\extra\httpd-vhost.conf):
 </VirtualHost>
 <VirtualHost *:80>
 	ServerName laravel-shop.loc
-	ServerAlias *.laravel-shop.loc
+#	ServerAlias *.laravel-shop.loc
 	DocumentRoot "/xampp/htdocs/laravel-shop/public"
 	CustomLog "logs/access_laravel-shop.log" common
 	ErrorLog "logs/error_laravel-shop.log"
