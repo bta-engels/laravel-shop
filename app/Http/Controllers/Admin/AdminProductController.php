@@ -75,7 +75,8 @@ class AdminProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-//        dd($request->input());
+        $product->update($request->input());
+        return redirect()->route('admin.products.index');
     }
 
     /**
