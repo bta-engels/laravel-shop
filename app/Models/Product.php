@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $manufacturer_id
  * @property string $name
  * @property string|null $description
+ * @property string|null $image
  * @property-read Manufacturer $manufacturer
  * @method static Builder|Product newModelQuery()
  * @method static Builder|Product newQuery()
@@ -22,6 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static Builder|Product whereCategoryId($value)
  * @method static Builder|Product whereDescription($value)
  * @method static Builder|Product whereId($value)
+ * @method static Builder|Product whereImage($value)
  * @method static Builder|Product whereManufacturerId($value)
  * @method static Builder|Product whereName($value)
  * @mixin Eloquent

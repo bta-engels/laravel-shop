@@ -9,7 +9,7 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th colspan="2">Details</th>
+                <th colspan="2"></th>
             </tr>
         </thead>
         <tbody>
@@ -17,9 +17,9 @@
                 @foreach($data as $item)
                     <tr>
                         <td>{{$item->id}}</td>
-                        <td><a href="{{ route('admin.products.show',$item)}}">{{$item->name}}</a></td>
-                        <td><a href="{{ route('admin.products.edit',$item)}}">edit</a></td>
-                        <td><a href="{{ route('admin.products.destroy',$item)}}">delete</a></td>
+                        <td><a href="{{ route('admin.products.show',$item) }}">{{ $item->name }}</a></td>
+                        <td><a href="{{ route('admin.products.edit',$item) }}">edit</a></td>
+                        <td><a href="{{ route('admin.products.destroy',$item) }}">delete</a></td>
                     </tr>
                 @endforeach
             @endif

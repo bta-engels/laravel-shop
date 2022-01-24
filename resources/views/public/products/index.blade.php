@@ -16,7 +16,8 @@
                 @foreach($data as $item)
                     <tr>
                         <td>{{$item->id}}</td>
-                        <td> <a href="{{ route('products.show',$item)}}"> {{$item->name}}</a></td>
+                        <td><a href="{{ route('products.show',$item) }}"> {{$item->name}}</a></td>
+
                     </tr>
                 @endforeach
             @endif

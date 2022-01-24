@@ -21,6 +21,17 @@ class AdminProductController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param Product $product
+     * @return Response
+     */
+    public function show(Product $product)
+    {
+        return view('admin.products.show',compact('product'));
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return Response
@@ -38,18 +49,7 @@ class AdminProductController extends Controller
      */
     public function store(Request $request)
     {
-        return view('layouts.form');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param Product $product
-     * @return Response
-     */
-    public function show(Product $product)
-    {
-        return view('admin.products.show',compact('product'));
+        //
     }
 
     /**
@@ -60,7 +60,7 @@ class AdminProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('admin.products.edit', compact('product'));
     }
 
     /**
