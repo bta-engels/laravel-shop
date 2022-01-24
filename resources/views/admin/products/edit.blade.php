@@ -6,7 +6,7 @@
 @section('content')
     <div class="right">
         <x-form action="{{ route('admin.products.update', $product) }}">
-
+            @method('put')
             @bind($product)
             <x-form-select name="manufacturer_id" :options="$manufacturers" />
             <x-form-input name="name" label="Name" />

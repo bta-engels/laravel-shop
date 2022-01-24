@@ -75,7 +75,7 @@ class AdminProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+//        dd($request->input());
     }
 
     /**
