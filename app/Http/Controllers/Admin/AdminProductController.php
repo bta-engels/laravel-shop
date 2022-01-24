@@ -60,6 +60,7 @@ class AdminProductController extends Controller
      */
     public function edit(Product $product)
     {
+        $manufacturers = Manufcturer::all()->keyBy('id')->map->name;
         return view('admin.products.edit', compact('product'));
     }
 
