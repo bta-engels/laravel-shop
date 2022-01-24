@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class ProductController extends Controller
+class AdminProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,7 @@ class ProductController extends Controller
     public function index()
     {
         $data = Product::all();
-        return view('public.products.index',compact('data'));
+        return view('admin.products.index',compact('data'));
     }
 
     /**
@@ -27,7 +28,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('public.products.show',compact('product'));
+        return view('admin.products.show',compact('product'));
     }
 
     /**
@@ -37,7 +38,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('layouts.form');
+        //
     }
 
     /**
@@ -48,6 +49,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        //
     }
 
     /**
