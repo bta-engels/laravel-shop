@@ -2,7 +2,7 @@
     <div class="logo_content">
         <div class="logo">
             <i class='bx bxl-flickr-square'></i>
-            <div class="logoname">SqaureCode</div>
+            <div class="logoname">AdminSqaureCode</div>
         </div>
         <i class='bx bx-menu' id="btn"></i>
     </div>
@@ -12,7 +12,13 @@
             <input type="text" name="search" placeholder="Search...">
             <span class="tooltip">Search</span>
         </li>
-
+        <li>
+            <a href="{{ route('my-logout') }}">
+                <i class='bx bx-user'></i>
+                <span class="link_name">{{ __('Logout') }}</span>
+            </a>
+            <span class="tooltip">{{ __('Logout') }}</span>
+        </li>
         <li>
             <a href="{{ route('dashboard') }}">
                 <i class='bx bx-grid-alt'></i>
@@ -21,7 +27,7 @@
             <span class="tooltip">Dashboard</span>
         </li>
         <li>
-            <a href="{{ route('products') }}">
+            <a href="{{ route('admin.products.index') }}">
                 <i class='bx bxl-product-hunt'></i>
                 <span class="link_name">{{ __('Products') }}</span>
             </a>
@@ -72,14 +78,14 @@
     </ul>
 </div>
 <script>
-    let btn = document.querySelector("#btn"),
-        side_bar = document.querySelector(".side_bar")
-    searchbtn = document.querySelector(".bx-search");
+	let btn = document.querySelector("#btn"),
+		side_bar = document.querySelector(".side_bar")
+	searchbtn = document.querySelector(".bx-search");
 
-    btn.onclick = function(){
-        side_bar.classList.toggle("active");
-    }
-    searchbtn.onclick = function(){
-        searchbtn.classList.toggle("active");
-    }
+	btn.onclick = function(){
+		side_bar.classList.toggle("active");
+	}
+	searchbtn.onclick = function(){
+		searchbtn.classList.toggle("active");
+	}
 </script>
