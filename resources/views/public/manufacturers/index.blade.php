@@ -1,26 +1,28 @@
 @extends('layouts.main')
 
-@section('title', __('Products'))
-@section('header', __('Products'))
+@section('title', __('Manufacturers'))
+@section('header', __('Manufacturers'))
 
 @section('content')
     <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Details</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Details</th>
+        </tr>
         </thead>
         <tbody>
-            @if ($data->count() > 0)
+            @if ($data->count() >0)
                 @foreach($data as $item)
                     <tr>
                         <td>{{$item->id}}</td>
                         <td>{{$item->name}}</td>
-                        <td> <a href="{{ route('products.show',$item)}}"> {{$item->name}}</a></td>
+                        <td> <a href="{{ route('manufacturers.show',$item)}}"> {{$item->name}}</a></td>
                     </tr>
                 @endforeach
+            @else
+                <span>Kein Datein vorhanden</span>
             @endif
         </tbody>
     </table>

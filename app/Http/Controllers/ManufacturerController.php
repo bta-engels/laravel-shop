@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\Manufacturer;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class ProductController extends Controller
+class ManufacturerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $data = Product::all();
-        return view('public.products.index',compact('data'));
+        $data = Manufacturer::all();
+        return view('public.manufacturers.index',compact('data'));
     }
 
     /**
@@ -26,7 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -37,27 +37,27 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        return view('layouts.form');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param Product $product
+     * @param Manufacturer $manufacturer
      * @return Response
      */
-    public function show(Product $product)
+    public function show(Manufacturer $manufacturer)
     {
-        return view('public.products.show',compact('product'));
+        return view('public.manufacturers.show',compact('manufacturer'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param Product $product
+     * @param Manufacturer $manufacturer
      * @return Response
      */
-    public function edit(Product $product)
+    public function edit(Manufacturer $manufacturer)
     {
         //
     }
@@ -66,10 +66,10 @@ class ProductController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param Product $product
+     * @param Manufacturer $manufacturer
      * @return Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Manufacturer $manufacturer)
     {
         //
     }
@@ -77,10 +77,10 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param Product $product
+     * @param Manufacturer $manufacturer
      * @return Response
      */
-    public function destroy(Product $product)
+    public function destroy(Manufacturer $manufacturer)
     {
         //
     }
