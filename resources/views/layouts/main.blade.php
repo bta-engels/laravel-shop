@@ -12,7 +12,11 @@
 </head>
 <body>
 
-<x-menu />
+@auth
+    <x-admin-menu />
+@else
+    <x-menu />
+@endauth
 
 <div class="content">
     <!-- Page Heading -->
