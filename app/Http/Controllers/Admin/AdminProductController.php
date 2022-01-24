@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Manufacturer;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+
 
 class AdminProductController extends Controller
 {
@@ -60,8 +62,8 @@ class AdminProductController extends Controller
      */
     public function edit(Product $product)
     {
-        $manufacturers = Manufcturer::all()->keyBy('id')->map->name;
-        return view('admin.products.edit', compact('product'));
+        $manufacturers = Manufacturer::all()->keyBy('id')->map->name;
+        return view('admin.products.edit', compact('product','manufacturers'));
     }
 
     /**
