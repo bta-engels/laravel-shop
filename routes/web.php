@@ -2,7 +2,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
-
+use App\Http\Controllers\ManufacturerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/products', [ProductController::class,'index'])->name('products');
+Route::get('/products/create', [ProductController::class,'store'])->name('products.store');
+Route::get('/products/{product}', [ProductController::class,'show'])->name('products.show');
+
+Route::get('/manufacturers', [ManufacturerController::class,'index'])->name('manufacturers');
+Route::get('/manufacturers/{manufacturer}', [ManufacturerController::class,'show'])->name('manufacturers.show');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -26,8 +33,5 @@ Route::get('logout', function () {
     Auth::logout();
     return response()->redirectTo('/');
 })->name('my-logout');
-
-Route::get('products', [ProductController::class, 'index'])->name('products');
-Route::get('products/{product}', [ProductController::class, 'show'])->name('products.show');
 
 require __DIR__.'/auth.php';
