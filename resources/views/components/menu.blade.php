@@ -13,19 +13,11 @@
             <span class="tooltip">Search</span>
         </li>
         <li>
-            @auth
-                <a href="{{ route('my-logout') }}">
-                    <i class='bx bx-user'></i>
-                    <span class="link_name">{{ __('Logout') }}</span>
-                </a>
-                <span class="tooltip">{{ __('Logout') }}</span>
-            @else
-                <a href="{{ route('login') }}">
-                    <i class='bx bx-user'></i>
-                    <span class="link_name">{{ __('Login') }}</span>
-                </a>
-                <span class="tooltip">{{ __('Login') }}</span>
-            @endauth
+            <a href="{{ route('login') }}">
+                <i class='bx bx-user'></i>
+                <span class="link_name">{{ __('Login') }}</span>
+            </a>
+            <span class="tooltip">{{ __('Login') }}</span>
         </li>
         <li>
             <a href="{{ route('dashboard') }}">
