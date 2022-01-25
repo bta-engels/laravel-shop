@@ -20,7 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('lang/{lang}', function ($lang){ return redirect()->back(); })->name('lang.switch');
+Route::get('lang/{lang}', function ($lang){
+    return redirect()->back();
+})->name('lang.switch');
 
 Route::get('/products', [ProductController::class,'index'])->name('products');
 Route::get('/products/{product}', [ProductController::class,'show'])->name('products.show');
