@@ -52,7 +52,12 @@ class AdminProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|unique:products|max:100|min:3',
+            'description' => 'required',
+            'category_id' => 'nullable|numeric',
+            'manufacturer_id' => 'required'
+        ]);
     }
 
     /**
@@ -77,7 +82,13 @@ class AdminProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $product->update($request->input());
+        $validated = $request->validate([
+            'name' => 'required|max:100|min:3',
+            'description' => 'required',
+            'category_id' => 'nullable|numeric',
+            'manufacturer_id' => 'required'
+        ]);
+        $product->update($validated);
         return redirect()->route('admin.products.index');
     }
 
