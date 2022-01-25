@@ -19,7 +19,7 @@
                         <td>{{$item->id}}</td>
                         <td><a href="{{ route('admin.products.show',$item) }}">{{ $item->name }}</a></td>
                         <td><a href="{{ route('admin.products.edit',$item) }}">edit</a></td>
-                        <td><a href="{{ route('admin.products.destroy',$item) }}">delete</a></td>
+                        <td><a class="delsoft" href="{{ route('admin.products.destroy',$item) }}">delete</a></td>
                     </tr>
                 @endforeach
             @endif
