@@ -21,15 +21,22 @@
 @endauth
 
 <!-- Page Heading -->
-<header class="bg-white shadow">
-    <div class="">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            @section('header')
-                Unser Header<br>
-            @show
-        </h2>
-    </div>
-</header>
+    <header>
+        <div>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                @section('header')
+                    Unser Header<br>
+                @show
+            </h2>
+        </div>
+        <div>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                bla bla
+            </h2>
+        </div>
+
+    </header>
+    <div class="table_content">
 
 <div class="content">
     <!-- Page Content -->
