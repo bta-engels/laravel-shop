@@ -87,6 +87,10 @@ class AdminProductController extends Controller
             'description'   => 'required',
             'category_id'   => 'nullable|numeric',
             'manufacturer_id'   => 'required',
+        ] , [
+            'name.required'          => 'Bitte einen Namen angeben: ',
+            'name.min'          => 'Der Name muss mindestens :min Zeichen enhalten. ',
+            'name.max'          => 'Der Name muss mindestens :max Zeichen enhalten. ',
         ]);
         $product->update($validated);
 
