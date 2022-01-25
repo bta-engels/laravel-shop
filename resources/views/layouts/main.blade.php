@@ -36,6 +36,11 @@
                 @else
                     public
                 @endauth
+                <span class="lang">
+                    <a class="@if('de' === app()->getLocale()) active @endif" href="{{ route('lang.switch', 'de') }}">DE</a>
+                    <a class="@if('en' === app()->getLocale()) active @endif" href="{{ route('lang.switch', 'en') }}">EN</a>
+                    <a class="@if('fr' === app()->getLocale()) active @endif" href="{{ route('lang.switch', 'fr') }}">FR</a>
+                </span>
             </h2>
         </div>
 
