@@ -18,17 +18,18 @@
     <x-menu />
 @endauth
 
-<div class="content">
-    <!-- Page Heading -->
-    <header class="bg-white shadow">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+<!-- Page Heading -->
+<header class="bg-white shadow">
+    <div class="">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             @section('header')
                 Unser Header<br>
             @show
-            </h2>
-        </div>
-    </header>
+        </h2>
+    </div>
+</header>
+
+<div class="content">
     <!-- Page Content -->
     <main class="block">
         <div class="py-12">
