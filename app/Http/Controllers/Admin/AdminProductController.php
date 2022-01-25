@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductStoreRequest;
 use App\Http\Requests\ProductUpdateRequest;
 use App\Models\Category;
 use App\Models\Manufacturer;
@@ -42,7 +43,9 @@ class AdminProductController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all()->keyBy('id')->map->name;
+        $manufacturers = Manufacturer::all()->keyBy('id')->map->name;
+        return view('admin.products.create', compact('manufacturers', 'categories'));
     }
 
     /**
@@ -51,14 +54,10 @@ class AdminProductController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(ProductStoreRequest $request)
     {
-        $validated = $request->validate([
-            'name'          => 'required|unique:products|max:100|min:3',
-            'description'   => 'required',
-            'category_id'   => 'nullable|numeric',
-            'manufacturer_id'   => 'required',
-        ]);
+        Product::create($request->validated());
+        return redirect()->route('admin.products.index');
     }
 
     /**
@@ -113,6 +112,7 @@ class AdminProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return redirect()->route('admin.products.index');
     }
 }
