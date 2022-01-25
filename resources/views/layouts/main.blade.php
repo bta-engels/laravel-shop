@@ -34,7 +34,7 @@
         </div>
 
     </header>
-    <div class="table_content">
+    <div class="main_content">
 
         <!-- Page Content -->
         <main class="block">

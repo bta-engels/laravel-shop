@@ -37,7 +37,7 @@ class Product extends Model
     {
         return $this->belongsTo(Manufacturer::class);
     }
-    public function categorie()
+    public function category()
     {
         return $this->belongsTo(Category::class);
     }

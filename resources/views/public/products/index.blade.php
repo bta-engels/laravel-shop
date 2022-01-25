@@ -9,6 +9,8 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
+                <th>Manufacturer</th>
+                <th>Category</th>
             </tr>
         </thead>
         <tbody>
@@ -17,7 +19,8 @@
                     <tr>
                         <td>{{$item->id}}</td>
                         <td><a href="{{ route('products.show',$item) }}"> {{$item->name}}</a></td>
-
+                        <td>{{$item->manufacturer->name}}</td>
+                        <td>@if($item->category){{$item->category->name}}@endif</td>
                     </tr>
                 @endforeach
             @endif

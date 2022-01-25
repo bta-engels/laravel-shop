@@ -9,6 +9,8 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
+                <th>Manufacturer</th>
+                <th>Category</th>
                 <th colspan="2"></th>
             </tr>
         </thead>
@@ -18,6 +20,8 @@
                     <tr>
                         <td>{{$item->id}}</td>
                         <td><a href="{{ route('admin.products.show',$item) }}">{{ $item->name }}</a></td>
+                        <td>{{$item->manufacturer->name}}</td>
+                        <td>@if($item->category){{$item->category->name}}@endif</td>
                         <td><a href="{{ route('admin.products.edit',$item) }}">edit</a></td>
                         <td><a href="{{ route('admin.products.destroy',$item) }}">delete</a></td>
                     </tr>
