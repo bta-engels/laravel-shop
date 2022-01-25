@@ -31,8 +31,14 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
+    public $timestamps = false;
     public function manufacturer()
     {
         return $this->belongsTo(Manufacturer::class);
+    }
+    public function categorie()
+    {
+        return $this->belongsTo(Category::class);
     }
 }
