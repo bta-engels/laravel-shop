@@ -19,3 +19,5 @@ yarn-error.log
 /.htaccess
 /.editorconfig
 /.styleci.yml
+/_ide_helper.php
+/.phpstorm.meta.php
