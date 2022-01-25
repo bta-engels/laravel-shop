@@ -27,6 +27,7 @@
             <span class="tooltip">Dashboard</span>
         </li>
         <li>
+            <!-- /admin/products -->
             <a href="{{ route('admin.products.index') }}">
                 <i class='bx bxl-product-hunt'></i>
                 <span class="link_name">{{ __('Products') }}</span>

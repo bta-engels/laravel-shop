@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
     <script src="{{ mix('js/app.js') }}"></script>
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}" />
@@ -30,7 +32,7 @@
         <div>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 @auth
-                    {{auth()->user()->name}}
+                    {{ auth()->user()->name }}
                 @else
                     public
                 @endauth

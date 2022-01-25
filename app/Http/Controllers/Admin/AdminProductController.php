@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Manufacturer;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Models\Manufacturer;
 
 
 class AdminProductController extends Controller
@@ -63,9 +63,9 @@ class AdminProductController extends Controller
      */
     public function edit(Product $product)
     {
-        $categories= Category::all()->keyBy('id')->map->name;
-        $manufacturers= Manufacturer::all()->keyBy('id')->map->name;
-        return view('admin.products.edit', compact('product','manufacturers','categories'));
+        $categories = Category::all()->keyBy('id')->map->name;
+        $manufacturers = Manufacturer::all()->keyBy('id')->map->name;
+        return view('admin.products.edit', compact('product','manufacturers', 'categories'));
     }
 
     /**
@@ -79,7 +79,6 @@ class AdminProductController extends Controller
     {
         $product->update($request->input());
         return redirect()->route('admin.products.index');
-
     }
 
     /**

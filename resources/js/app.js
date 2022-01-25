@@ -1,7 +1,8 @@
 require('./bootstrap');
 
-import Alpine from 'alpinejs';
-
-window.Alpine = Alpine;
-
-Alpine.start();
+window.onload = function (e) {
+	let elems = document.querySelectorAll('.delsoft');
+	for(el of elems) {
+		el.onclick = function(){ return confirm("Datensatz wirklich löschen?") };
+	}
+}
