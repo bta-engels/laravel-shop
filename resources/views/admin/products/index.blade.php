@@ -24,8 +24,8 @@
                     <tr>
                         <td>{{$item->id}}</td>
                         <td><a href="{{ route('admin.products.show',$item) }}">{{ $item->name }}</a></td>
-                        <td>{{ $item->category->name }}</a></td>
-                        <td>{{ $item->manufacturer->name }}</a></td>
+                        <td>{{ $item->category->name }}</td>
+                        <td>{{ $item->manufacturer->name }}</td>
                         <td><a href="{{ route('admin.products.edit',$item) }}">edit</a></td>
                         <td><a class="delsoft" href="{{ route('admin.products.destroy',$item) }}">delete</a></td>
                     </tr>

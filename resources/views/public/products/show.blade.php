@@ -6,7 +6,7 @@
 
 @section('content')
     <div>
-        Hersteller <p>{{$product->manufacturer->name}}</p>
-        <p>{{$product->description}}</p>
+        <h3 class="font-bold mx-2">Hersteller: {{$product->manufacturer->name}}</h3>
+        <p>{!! $product->description !!}</p>
     </div>
 @endsection
