@@ -7,6 +7,6 @@
 @section('content')
     <div>
         <h3 class="font-bold mx-2">Hersteller: {{$product->manufacturer->name}}</h3>
-        <p>{!! $product->description !!}</p>
+        <p>{!! nl2br($product->description) !!}</p>
     </div>
 @endsection

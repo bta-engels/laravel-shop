@@ -6,7 +6,7 @@
 
 @section('content')
     <div>
-        <p>{!! $manufacturer->description !!}</p>
+        <p>{!! nl2br($product->description) !!}</p>
         @if($manufacturer->products->count() > 0)
             <h3 class="font-bold mx-2">{{ __('Products') }}</h3>
             <ul>
