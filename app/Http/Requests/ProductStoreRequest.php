@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-class ProductStoreRequest extends MainRequest
+class ProductStoreRequest extends ProductRequest
 {
     /**
      * Get the validation rules that apply to the request.
