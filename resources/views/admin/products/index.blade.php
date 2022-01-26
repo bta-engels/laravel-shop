@@ -13,8 +13,7 @@
             <tr>
                 <th>Id</th>
                 <th>{{ __('Name') }}</th>
-                <th>{{ __('Category') }}</th>
-                <th>{{ __('Manufacturer') }}</th>
+                <th>{{ __('Category and Manufacturer') }}</th>
                 <th colspan="2"></th>
             </tr>
         </thead>
@@ -24,8 +23,7 @@
                     <tr>
                         <td>{{$item->id}}</td>
                         <td><a href="{{ route('admin.products.show',$item) }}">{{ $item->name }}</a></td>
-                        <td>{{ $item->category->name }}</a></td>
-                        <td>{{ $item->manufacturer->name }}</a></td>
+                        <td>{{ $item->cm }}</a></td>
                         <td><a href="{{ route('admin.products.edit',$item) }}">edit</a></td>
                         <td><a class="delsoft" href="{{ route('admin.products.destroy',$item) }}">delete</a></td>
                     </tr>
