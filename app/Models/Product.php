@@ -33,8 +33,16 @@ class Product extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+    protected $appends = ['cm'];
     public $timestamps = false;
     protected $appends = ['cm'];
+
+    public function getCmAttribute()
+    {
+        $category = $this->category->name;
+        $manufacturer = $this->manufacturer->name;
+        return "($category) $manufacturer";
+    }
 
     public function getCmAttribute()
     {

@@ -4,6 +4,7 @@
 /public/css
 /public/fonts
 /public/storage
+/database/dumps/shop.sql
 /storage/*.key
 /vendor
 .env

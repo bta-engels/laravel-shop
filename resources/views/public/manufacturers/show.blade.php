@@ -6,8 +6,7 @@
 
 @section('content')
     <div>
-        
-        <p>{{$manufacturer->description}}</p>
+        <p>{!! nl2br($product->description) !!}</p>
     </div>
 @endsection
 
