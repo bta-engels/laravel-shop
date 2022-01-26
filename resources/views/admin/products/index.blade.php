@@ -11,7 +11,7 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>ID</th>
                 <th>Name</th>
                 <th>Kategorie</th>
                 <th>Hersteller</th>
