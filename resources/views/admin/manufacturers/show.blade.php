@@ -18,5 +18,5 @@
             </ul>
         </div>
     @endif
-    <a href="{{ route('admin.manufacturers.index') }}" style="color:DodgerBlue;  font-weight: bold;">Zurück zu Manufacturer</a>
+    <a href="{{ route('admin.manufacturers.index') }}" style="color:DodgerBlue;  font-weight: bold;">Zurück zu Manufacturers</a>
 @endsection

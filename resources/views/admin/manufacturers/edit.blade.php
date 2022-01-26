@@ -11,7 +11,6 @@
              <x-form-input name="name" label="Name" />
             <x-form-textarea name="description" placeholder="Beschreibung" />
             @endbind
-
             <x-form-submit />
         </x-form>
     </div>

@@ -5,7 +5,7 @@
 
 @section('content')
     <div class="right">
-        <x-form method="post "action="{{ route('admin.products.update', $product) }}">
+        <x-form action="{{ route('admin.products.update', $product) }}">
             @method('put')
             @bind($product)
             <x-form-select name="category_id" label="Kategorie" :options="$categories" />
