@@ -36,6 +36,7 @@ class Product extends Model
     protected $guarded = ['id'];
     protected $appends = ['cm'];
     public $timestamps = false;
+    // all translatable columns as array
     public $translatable = ['name'];
 
     public function getCmAttribute()
