@@ -15,4 +15,5 @@ class MainRequest extends FormRequest
     {
         return auth()->check();
     }
+
 }
