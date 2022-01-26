@@ -19,7 +19,7 @@
             </tr>
         </thead>
         <tbody>
-            @if ($data->count() > 0)
+            @if($data->count() > 0)
                 @foreach($data as $item)
                     <tr>
                         <td>{{$item->id}}</td>
