@@ -47,6 +47,9 @@ header {
 								content: ""
 							}
 						}
+						&.active {
+							color: $red;
+						}
 					}
 				}
 			}
