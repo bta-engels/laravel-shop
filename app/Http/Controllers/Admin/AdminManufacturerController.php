@@ -29,6 +29,7 @@ class AdminManufacturerController extends Controller
      */
     public function show(Manufacturer $manufacturer)
     {
+// eacher loading
 //        $manufacturer->load('products');
         return view('admin.manufacturers.show',compact('manufacturer'));
     }
