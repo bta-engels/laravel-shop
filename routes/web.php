@@ -22,6 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('lang/{lang}', function ($lang){
+    session()->put('language', $lang);
     return redirect()->back();
 })->name('lang.switch');
 
