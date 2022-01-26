@@ -37,8 +37,8 @@ Route::group([
     'middleware'    => 'auth',
 ], function () {
     Route::get('', [AdminProductController::class,'index'])->name('index');
-    Route::get('create', [AdminProductController::class,'create'])->name('create');
     Route::get('{product}', [AdminProductController::class,'show'])->name('show');
+    Route::get('create', [AdminProductController::class,'create'])->name('create');
     Route::get('edit/{product}', [AdminProductController::class,'edit'])->name('edit');
     Route::get('destroy/{product}', [AdminProductController::class,'destroy'])->name('destroy');
     Route::post('', [AdminProductController::class,'store'])->name('store');
