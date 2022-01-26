@@ -6,17 +6,14 @@
 
 @section('content')
     <div>
-        <p>{{$manufacturer->description}}</p>
-    </div>
-    @if ($manufacturer->products->count())
-        <h2 style="color:DodgerBlue;  font-weight: bold;">Unserer Produckte</h2>
-        <div>
+        <p>{!! $manufacturer->description !!}</p>
+        @if($manufacturer->products->count() > 0)
+            <h3 class="font-bold mx-2">{{ __('Products') }}</h3>
             <ul>
-                @foreach($manufacturer->products as $product)
-                    <li>{{$product->name}}</li>
+                @foreach($manufacturer->products as $item)
+                    <li>{{ $item->name }}</li>
                 @endforeach
             </ul>
-        </div>
-    @endif
-    <a href="{{ route('admin.manufacturers.index') }}" style="color:DodgerBlue;  font-weight: bold;">Zurück zu Manufacturers</a>
+        @endif
+    </div>
 @endsection

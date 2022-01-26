@@ -28,20 +28,22 @@ Route::get('lang/{lang}', function ($lang){
 Route::get('/products', [ProductController::class,'index'])->name('products');
 Route::get('/products/{product}', [ProductController::class,'show'])->name('products.show');
 
+Route::get('/manufacturers', [ManufacturerController::class,'index'])->name('manufacturers');
+Route::get('/manufacturers/{manufacturer}', [ManufacturerController::class,'show'])->name('manufacturers.show');
+
 Route::group([
     'prefix'        => 'admin/products',
     'as'            => 'admin.products.',
     'middleware'    => 'auth',
 ], function () {
     Route::get('', [AdminProductController::class,'index'])->name('index');
-    Route::get('{product}', [AdminProductController::class,'show'])->where('product','[0-9]+')->name('show');
+    Route::get('{product}', [AdminProductController::class,'show'])->name('show');
     Route::get('create', [AdminProductController::class,'create'])->name('create');
     Route::get('edit/{product}', [AdminProductController::class,'edit'])->name('edit');
     Route::get('destroy/{product}', [AdminProductController::class,'destroy'])->name('destroy');
     Route::post('', [AdminProductController::class,'store'])->name('store');
     Route::put('{product}', [AdminProductController::class,'update'])->name('update');
 });
-
 Route::group([
     'prefix'        => 'admin/manufacturers',
     'as'            => 'admin.manufacturers.',
@@ -53,11 +55,9 @@ Route::group([
     Route::get('edit/{manufacturer}', [AdminManufacturerController::class,'edit'])->name('edit');
     Route::get('destroy/{manufacturer}', [AdminManufacturerController::class,'destroy'])->name('destroy');
     Route::post('', [AdminManufacturerController::class,'store'])->name('store');
-    Route::put('{manufacturer}', [AdminManufacturerController::class,'update'])->name('update');
+    Route::put('/{manufacturer}', [AdminManufacturerController::class,'update'])->name('update');
 });
 
-Route::get('/manufacturers', [ManufacturerController::class,'index'])->name('manufacturers');
-Route::get('/manufacturers/{manufacturer}', [ManufacturerController::class,'show'])->name('manufacturers.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

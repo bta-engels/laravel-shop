@@ -2,9 +2,6 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
-
-
 class ManufacturerStoreRequest extends MainRequest
 {
     /**
@@ -15,7 +12,7 @@ class ManufacturerStoreRequest extends MainRequest
     public function rules()
     {
         return [
-            'name'          => 'required|unique:products|max:100|min:3',
+            'name'          => 'required|unique:manufacturers|max:100|min:3',
             'description'   => 'required',
         ];
     }

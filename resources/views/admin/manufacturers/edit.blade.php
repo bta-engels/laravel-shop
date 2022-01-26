@@ -8,9 +8,10 @@
         <x-form action="{{ route('admin.manufacturers.update', $manufacturer) }}">
             @method('put')
             @bind($manufacturer)
-             <x-form-input name="name" label="Name" />
+            <x-form-input name="name" label="Name" />
             <x-form-textarea name="description" placeholder="Beschreibung" />
             @endbind
+
             <x-form-submit />
         </x-form>
     </div>
