@@ -2,20 +2,8 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
-use App\Http\Requests\MainRequest;
 class ProductStoreRequest extends MainRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
-    {
-        return false;
-    }
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -24,7 +12,10 @@ class ProductStoreRequest extends MainRequest
     public function rules()
     {
         return [
-            //
+            'name'          => 'required|unique:products|max:100|min:3',
+            'description'   => 'required',
+            'category_id'   => 'nullable|numeric',
+            'manufacturer_id'   => 'required',
         ];
     }
 }

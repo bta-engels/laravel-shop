@@ -4,6 +4,10 @@
 @section('header', __('Products'))
 
 @section('content')
+    <div>
+        <a href="{{ route('admin.products.create') }}">{{ __('Neueintrag') }}</a>
+    </div>
+
     <table class="table">
         <thead>
             <tr>

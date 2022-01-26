@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('lang/{lang}', function ($lang){
+    return redirect()->back();
+})->name('lang.switch');
+
 Route::get('/products', [ProductController::class,'index'])->name('products');
 Route::get('/products/{product}', [ProductController::class,'show'])->name('products.show');
 
@@ -29,8 +33,8 @@ Route::group([
     'middleware'    => 'auth',
 ], function () {
     Route::get('/products', [AdminProductController::class,'index'])->name('index');
-    Route::get('/products/{product}', [AdminProductController::class,'show'])->name('show');
     Route::get('/products/create', [AdminProductController::class,'create'])->name('create');
+    Route::get('/products/{product}', [AdminProductController::class,'show'])->name('show');
     Route::get('/products/edit/{product}', [AdminProductController::class,'edit'])->name('edit');
     Route::get('/products/destroy/{product}', [AdminProductController::class,'destroy'])->name('destroy');
     Route::post('/products', [AdminProductController::class,'store'])->name('store');
