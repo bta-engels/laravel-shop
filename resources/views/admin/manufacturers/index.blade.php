@@ -5,7 +5,7 @@
 
 @section('content')
     <div>
-        <a href="{{ route('admin.manufacturers.create') }}">{{ __('Neueintrag') }}</a>
+        <a href="{{ route('admin.manufacturers.create') }}">{{ __('New Entry') }}</a>
     </div>
 
     <table class="table">

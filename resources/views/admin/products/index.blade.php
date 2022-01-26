@@ -5,16 +5,16 @@
 
 @section('content')
     <div>
-        <a href="{{ route('admin.products.create') }}">{{ __('Neueintrag') }}</a>
+        <a href="{{ route('admin.products.create') }}">{{ __('New Entry') }}</a>
     </div>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Kategorie</th>
-                <th>Hersteller</th>
+                <th>{{ __('Name') }}</th>
+                <th>{{ __('Category') }}</th>
+                <th>{{ __('Manufacturer') }}</th>
                 <th colspan="2"></th>
             </tr>
         </thead>
