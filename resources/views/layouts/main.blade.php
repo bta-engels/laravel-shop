@@ -32,9 +32,9 @@
         <div>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 @auth
-                    {{ auth()->user()->name }}
+                    {{ auth()->user()->name }} <a href="{{ route('my-logout') }}">Logout</a>
                 @else
-                    public
+                    <a href="{{ route('login') }}">Login</a>
                 @endauth
                 <span class="lang">
                     <a class="@if('de' === app()->getLocale()) active @endif" href="{{ route('lang.switch', 'de') }}">DE</a>
