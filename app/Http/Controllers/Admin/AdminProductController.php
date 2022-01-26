@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductUpdateRequest;
 use App\Models\Category;
 use App\Models\Manufacturer;
 use App\Models\Product;
@@ -80,16 +81,25 @@ class AdminProductController extends Controller
      * @param Product $product
      * @return Response
      */
-    public function update(Request $request, Product $product)
-    {
-        $validated = $request->validate([
-            'name'          => 'required|max:100|min:3',
-            'description'   => 'required',
-            'category_id'   => 'nullable|numeric',
-            'manufacturer_id'   => 'required',
-        ]);
-        $product->update($validated);
+    /*  public function update(Request $request, Product $product)
+      {
+          $validated = $request->validate([
+              'name'          => 'required|max:100|min:3',
+              'description'   => 'required',
+              'category_id'   => 'nullable|numeric',
+              'manufacturer_id'   => 'required',
+          ],  [
+              'name.required' => 'bitte ein Name eingeben',
+              'name.min' => 'Der Name muss mindestens :min Zeihen erhatlten',
+              'name.max' => 'Der Name darf maximal :max Zeihen erhatlten',
+          ]);
+          $product->update($validated);
 
+          return redirect()->route('admin.products.index');
+      }*/
+    public function update(ProductUpdateRequest $request, Product $product)
+    {
+        $product->update($request->validated());
         return redirect()->route('admin.products.index');
     }
 
