@@ -2,10 +2,8 @@
 
 namespace App\Http\Requests;
 
-
 class ManufacturerStoreRequest extends MainRequest
 {
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -14,9 +12,8 @@ class ManufacturerStoreRequest extends MainRequest
     public function rules()
     {
         return [
-            'name'          => 'required|unique:products|max:100|min:3',
+            'name'          => 'required|unique:manufacturers|max:100|min:3',
             'description'   => 'required',
-
         ];
     }
 }

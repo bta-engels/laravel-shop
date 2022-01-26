@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ManufacturerStoreRequest;
 use App\Http\Requests\ManufacturerUpdateRequest;
 use App\Models\Manufacturer;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class AdminManufacturerController extends Controller
@@ -23,6 +22,19 @@ class AdminManufacturerController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  Manufacturer  $manufacturer
+     * @return Response
+     */
+    public function show(Manufacturer $manufacturer)
+    {
+// eacher loading
+//        $manufacturer->load('products');
+        return view('admin.manufacturers.show',compact('manufacturer'));
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return Response
@@ -35,7 +47,7 @@ class AdminManufacturerController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param  ManufacturerStoreRequest  $request
      * @return Response
      */
     public function store(ManufacturerStoreRequest $request)
@@ -45,32 +57,21 @@ class AdminManufacturerController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param Manufacturer $manufacturer
-     * @return Response
-     */
-    public function show(Manufacturer $manufacturer)
-    {
-        return view('admin.manufacturers.show',compact('manufacturer'));
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
-     * @param Manufacturer $manufacturer
+     * @param  Manufacturer  $manufacturer
      * @return Response
      */
     public function edit(Manufacturer $manufacturer)
     {
-        return view('admin.manufacturers.edit',compact('manufacturer'));
+        return view('admin.manufacturers.edit', compact('manufacturer'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  ManufacturerUpdateRequest $request
-     * @param Manufacturer $manufacturer
+     * @param  ManufacturerUpdateRequest  $request
+     * @param  Manufacturer  $manufacturer
      * @return Response
      */
     public function update(ManufacturerUpdateRequest $request, Manufacturer $manufacturer)
@@ -82,7 +83,7 @@ class AdminManufacturerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param Manufacturer $manufacturer
+     * @param  Manufacturer  $manufacturer
      * @return Response
      */
     public function destroy(Manufacturer $manufacturer)

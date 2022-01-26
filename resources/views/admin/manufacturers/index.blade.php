@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', __('Manufactuers'))
+@section('title', __('Manufacturers'))
 @section('header', __('Manufacturers'))
 
 @section('content')
