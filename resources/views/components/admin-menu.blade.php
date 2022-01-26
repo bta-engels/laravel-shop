@@ -35,11 +35,11 @@
             <span class="tooltip">{{ __('Products') }}</span>
         </li>
         <li>
-            <a href="{{ route('manufacturers') }}">
+            <a href="{{ route('admin.manufacturers.index') }}">
                 <i class='bx bxs-factory'></i>
-                <span class="link_name">Manufacturers</span>
+                <span class="link_name">{{ __('Manufacturers') }}</span>
             </a>
-            <span class="tooltip">Manufacturers</span>
+            <span class="tooltip">{{ __('Manufacturers') }}</span>
         </li>
         <li>
             <a href="#">

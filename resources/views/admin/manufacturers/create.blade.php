@@ -1,13 +1,11 @@
 @extends('layouts.main')
 
-@section('title', __('Edit Product'))
-@section('header', __('Edit Product'))
+@section('title', __('Edit Manufacturer'))
+@section('header', __('Edit Manufacturer'))
 
 @section('content')
     <div class="right">
-        <x-form method="post" action="{{ route('admin.products.store') }}">
-            <x-form-select name="category_id" label="Kategorie" :options="$categories" />
-            <x-form-select name="manufacturer_id" label="Hersteller" :options="$manufacturers" />
+        <x-form method="post" action="{{ route('admin.manufacturers.store') }}">
             <x-form-input name="name" label="Name" />
             <x-form-textarea name="description" placeholder="Beschreibung" />
             <x-form-submit />

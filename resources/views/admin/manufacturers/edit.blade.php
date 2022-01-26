@@ -1,15 +1,13 @@
 @extends('layouts.main')
 
-@section('title', __('Edit Product'))
-@section('header', __('Edit Product'))
+@section('title', __('Edit Manufacturer'))
+@section('header', __('Edit Manufacturer'))
 
 @section('content')
     <div class="right">
-        <x-form action="{{ route('admin.products.update', $product) }}">
+        <x-form action="{{ route('admin.manufacturers.update', $manufacturer) }}">
             @method('put')
-            @bind($product)
-            <x-form-select name="category_id" label="Kategorie" :options="$categories" />
-            <x-form-select name="manufacturer_id" label="Hersteller" :options="$manufacturers" />
+            @bind($manufacturer)
             <x-form-input name="name" label="Name" />
             <x-form-textarea name="description" placeholder="Beschreibung" />
             @endbind

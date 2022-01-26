@@ -8,7 +8,6 @@ use App\Http\Requests\ProductUpdateRequest;
 use App\Models\Category;
 use App\Models\Manufacturer;
 use App\Models\Product;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 
@@ -51,7 +50,7 @@ class AdminProductController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param ProductStoreRequest $request
      * @return Response
      */
     public function store(ProductStoreRequest $request)
@@ -76,7 +75,7 @@ class AdminProductController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
+     * @param ProductStoreRequest $request
      * @param Product $product
      * @return Response
      */
