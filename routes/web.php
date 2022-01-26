@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ManufacturerController;
 use App\Http\Controllers\Admin\AdminProductController;
+use App\Http\Controllers\Admin\AdminManufacturerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,20 @@ Route::group([
 
 Route::get('/manufacturers', [ManufacturerController::class,'index'])->name('manufacturers');
 Route::get('/manufacturers/{manufacturer}', [ManufacturerController::class,'show'])->name('manufacturers.show');
+
+Route::group([
+    'prefix'        => 'admin',
+    'as'            => 'admin.manufacturers.',
+    'middleware'    => 'auth',
+], function () {
+    Route::get('/manufacturers', [AdminManufacturerController::class,'index'])->name('index');
+    Route::get('/manufacturers/create', [AdminManufacturerController::class,'create'])->name('create');
+    Route::get('/manufacturers/{manufacturer}', [AdminManufacturerController::class,'show'])->name('show');
+    Route::get('/manufacturers/edit/{manufacturer}', [AdminManufacturerController::class,'edit'])->name('edit');
+    Route::get('/manufacturers/destroy/{manufacturer}', [AdminManufacturerController::class,'destroy'])->name('destroy');
+    Route::post('/manufacturers', [AdminManufacturerController::class,'store'])->name('store');
+    Route::put('/manufacturers/{manufacturer}', [AdminManufacturerController::class,'update'])->name('update');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

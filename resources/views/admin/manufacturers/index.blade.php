@@ -1,11 +1,11 @@
 @extends('layouts.main')
 
-@section('title', __('Products'))
-@section('header', __('Products'))
+@section('title', __('Manufactuers'))
+@section('header', __('Manufacturers'))
 
 @section('content')
     <div>
-        <a href="{{ route('admin.products.create') }}">{{ __('Neueintrag') }}</a>
+        <a href="{{ route('admin.manufacturers.create') }}">{{ __('Neueintrag') }}</a>
     </div>
 
     <table class="table">
@@ -13,8 +13,6 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Kategorie</th>
-                <th>Hersteller</th>
                 <th colspan="2"></th>
             </tr>
         </thead>
@@ -23,11 +21,9 @@
                 @foreach($data as $item)
                     <tr>
                         <td>{{$item->id}}</td>
-                        <td><a href="{{ route('admin.products.show',$item) }}">{{ $item->name }}</a></td>
-                        <td>{{ $item->category->name }}</a></td>
-                        <td>{{ $item->manufacturer->name }}</a></td>
-                        <td><a href="{{ route('admin.products.edit',$item) }}">edit</a></td>
-                        <td><a class="delsoft" href="{{ route('admin.products.destroy',$item) }}">delete</a></td>
+                        <td><a href="{{ route('admin.manufacturers.show',$item) }}">{{ $item->name }}</a></td>
+                        <td><a href="{{ route('admin.manufacturers.edit',$item) }}">edit</a></td>
+                        <td><a class="delsoft" href="{{ route('admin.manufacturers.destroy',$item) }}">delete</a></td>
                     </tr>
                 @endforeach
             @endif
