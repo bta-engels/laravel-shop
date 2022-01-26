@@ -2,17 +2,21 @@
 
 @section('title', __('Manufacturers'))
 @section('header', __('Manufacturers'))
+@section('links')
+    <nav>
+        <ul>
+            <li><a href="{{ route('admin.manufacturers.create') }}">{{ __('New Entry') }}</a></li>
+        </ul>
+    </nav>
+@endsection
 
 @section('content')
-    <div>
-        <a href="{{ route('admin.manufacturers.create') }}">{{ __('New Entry') }}</a>
-    </div>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
+                <th>{{ __('Name') }}</th>
                 <th colspan="2"></th>
             </tr>
         </thead>

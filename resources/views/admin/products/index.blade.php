@@ -12,8 +12,8 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Kategorie und Hersteller</th>
+                <th>{{ __('Name') }}</th>
+                <th>{{ __('Category and Manufacturer') }}</th>
                 <th colspan="2"></th>
             </tr>
         </thead>

@@ -21,6 +21,8 @@
 @endauth
 <div class="content">
 <!-- Page Heading -->
+
+
     <header >
         <div>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -46,6 +48,9 @@
 
     </header>
     <div class="main_content">
+        <div class="links">
+            @yield('links')
+        </div>
 
         <!-- Page Content -->
         <main class="block">

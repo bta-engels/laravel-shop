@@ -15,7 +15,9 @@ class CreateManufacturersTable extends Migration
     {
         Schema::create('manufacturers', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('name',50);
+            $table->text('description')->nullable();
+            $table->foreign('manufacturer_id')->references('id')->on('manufacturers');
         });
     }
 

@@ -2,7 +2,13 @@
 
 @section('title', __('Edit Manufacturer'))
 @section('header', __('Edit Manufacturer'))
-
+@section('links')
+    <nav>
+        <ul>
+            <li><a href="{{ route('admin.manufacturers.index') }}">{{ __('Back to Manufacturers') }}</a></li>
+        </ul>
+    </nav>
+@endsection
 @section('content')
     <div class="right">
         <x-form method="post" action="{{ route('admin.manufacturers.store') }}">
