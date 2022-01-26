@@ -7,6 +7,6 @@
 @section('content')
     <div>
         Hersteller <p>{{$manufacturer->name}}</p>
-        <p>{{$manufacturer>description}}</p>
+        <p>{{$manufacturer->description}}</p>
     </div>
 @endsection
