@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ApiTodoUpdateRequest;
 use App\Models\Todo;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -49,9 +50,10 @@ class ApiTodoController extends Controller
      * @param Todo $todo
      * @return Response
      */
-    public function update(Request $request, Todo $todo)
+    public function update(ApiTodoUpdateRequest $request, Todo $todo)
     {
-        //
+        $result = $todo->update($request->validate());
+        return response()->json(['result' => $result]);
     }
 
     /**
