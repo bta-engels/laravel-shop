@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ApiTodoStoreRequest;
 use App\Http\Requests\ApiTodoUpdateRequest;
 use App\Models\Todo;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class ApiTodoController extends Controller
@@ -72,6 +71,10 @@ class ApiTodoController extends Controller
      */
     public function destroy(Todo $todo)
     {
-        //
+        $result = $todo->delete();
+        return response()->json([
+            'result' => $result,
+            'data' =>$todo,
+        ]);
     }
 }
