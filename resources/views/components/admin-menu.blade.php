@@ -43,10 +43,10 @@
         </li>
         <li>
             <a href="#">
-                <i class='bx bx-pie-chart-alt'></i>
-                <span class="link_name">Analytics</span>
+                <i class='bx bxs-category'></i>
+                <span class="link_name">Category</span>
             </a>
-            <span class="tooltip">Analytics</span>
+            <span class="tooltip">Category</span>
         </li>
         <li>
             <a href="#">
