@@ -14,10 +14,9 @@ class CreateManufacturersTable extends Migration
     public function up()
     {
         Schema::create('manufacturers', function (Blueprint $table) {
-            $table->id();
+            $table->integerIncrements('id');
             $table->string('name',50);
             $table->text('description')->nullable();
-            $table->foreign('manufacturer_id')->references('id')->on('manufacturers');
         });
     }
 
