@@ -45,6 +45,7 @@ Route::group([
     Route::post('', [AdminProductController::class,'store'])->name('store');
     Route::put('{product}', [AdminProductController::class,'update'])->name('update');
 });
+
 Route::group([
     'prefix'        => 'admin/manufacturers',
     'as'            => 'admin.manufacturers.',

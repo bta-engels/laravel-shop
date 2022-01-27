@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Database\Factories\ManufacturerFactory;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
@@ -23,6 +24,9 @@ use Illuminate\Database\Eloquent\Model;
  * @method static Builder|Manufacturer whereId($value)
  * @method static Builder|Manufacturer whereName($value)
  * @mixin Eloquent
+ * @property-read Collection|Product[] $products
+ * @property-read int|null $products_count
+ * @method static ManufacturerFactory factory(...$parameters)
  */
 class Manufacturer extends Model
 {

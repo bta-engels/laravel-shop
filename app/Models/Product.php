@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Database\Factories\ProductFactory;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -27,6 +28,9 @@ use Illuminate\Database\Eloquent\Model;
  * @method static Builder|Product whereManufacturerId($value)
  * @method static Builder|Product whereName($value)
  * @mixin Eloquent
+ * @property-read Category $category
+ * @property-read mixed $cm
+ * @method static ProductFactory factory(...$parameters)
  */
 class Product extends Model
 {
