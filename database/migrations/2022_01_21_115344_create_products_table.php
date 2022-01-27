@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('manufacturer_id');
             $table->string('name', 50);
             $table->text('description')->nullable();
+            $table->string('image')->nullable();
             // relations
             $table->foreign('category_id')
                 ->references('id')
