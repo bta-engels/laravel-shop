@@ -15,5 +15,4 @@ class ApiMainRequest extends FormRequest
     {
         return true;
     }
-
 }

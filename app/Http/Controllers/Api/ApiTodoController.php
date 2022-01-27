@@ -46,13 +46,13 @@ class ApiTodoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
+     * @param ApiTodoUpdateRequest $request
      * @param Todo $todo
      * @return Response
      */
     public function update(ApiTodoUpdateRequest $request, Todo $todo)
     {
-        $result = $todo->update($request->validate());
+        $result = $todo->update($request->validated());
         return response()->json(['result' => $result]);
     }
 
