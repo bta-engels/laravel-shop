@@ -2,20 +2,8 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
-
-class ApiTodoStoreRequest extends FormRequest
+class ApiTodoStoreRequest extends ApiTodoRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
-    {
-        return false;
-    }
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -24,7 +12,8 @@ class ApiTodoStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'text'   => 'required|unique:todos|max:100|min:3',
+            'done'   => 'nullable|boolean',
         ];
     }
 }
