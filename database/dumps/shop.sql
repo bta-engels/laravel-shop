@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Erstellungszeit: 26. Jan 2022 um 14:49
--- Server-Version: 10.4.21-MariaDB
--- PHP-Version: 8.0.13
+-- Host: 127.0.0.1
+-- Generation Time: Jan 26, 2022 at 02:46 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.0.13
 
 SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Datenbank: `shop`
+-- Database: `shop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `blogs`
+-- Table structure for table `blogs`
 --
 
 DROP TABLE IF EXISTS `blogs`;
@@ -35,17 +35,10 @@ CREATE TABLE `blogs` (
   `body` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Daten für Tabelle `blogs`
---
-
-INSERT IGNORE INTO `blogs` (`id`, `title`, `body`) VALUES
-(1, 'Mein erster Blog', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sint modo partes vitae beatae. Hunc vos beatum; Qua tu etiam inprudens utebare non numquam. Tu quidem reddes; Si longus, levis dictata sunt. Duo Reges: constructio interrete. <br />\r\n<br />\r\nTu quidem reddes; Ea possunt paria non esse. Si quae forte-possumus. Est enim effectrix multarum et magnarum voluptatum. Non laboro, inquit, de nomine. Cave putes quicquam esse verius. <br />\r\n<br />\r\nDuo enim genera quae erant, fecit tria. Quid, de quo nulla dissensio est? Egone quaeris, inquit, quid sentiam? Quae sequuntur igitur? Ne in odium veniam, si amicum destitero tueri. Quod iam a me expectare noli. <br />\r\n<br />\r\nSed fac ista esse non inportuna; Et quod est munus, quod opus sapientiae? Summae mihi videtur inscitiae. Egone quaeris, inquit, quid sentiam? <br />\r\n<br />\r\nNegat esse eam, inquit, propter se expetendam. Omnia contraria, quos etiam insanos esse vultis. Unum est sine dolore esse, alterum cum voluptate. Falli igitur possumus. Et quidem, inquit, vehementer errat; Qui est in parvis malis.');
-
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `categories`
+-- Table structure for table `categories`
 --
 
 DROP TABLE IF EXISTS `categories`;
@@ -55,17 +48,17 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Daten für Tabelle `categories`
+-- Dumping data for table `categories`
 --
 
 INSERT IGNORE INTO `categories` (`id`, `name`) VALUES
-(1, 'Fahrräder'),
+(1, 'Fahrraeder'),
 (2, 'Rahmen');
 
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `failed_jobs`
+-- Table structure for table `failed_jobs`
 --
 
 DROP TABLE IF EXISTS `failed_jobs`;
@@ -82,7 +75,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `features`
+-- Table structure for table `features`
 --
 
 DROP TABLE IF EXISTS `features`;
@@ -92,17 +85,10 @@ CREATE TABLE `features` (
   `body` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Daten für Tabelle `features`
---
-
-INSERT IGNORE INTO `features` (`id`, `title`, `body`) VALUES
-(1, 'Neues Feature', 'alles super.');
-
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `manufacturers`
+-- Table structure for table `manufacturers`
 --
 
 DROP TABLE IF EXISTS `manufacturers`;
@@ -113,17 +99,19 @@ CREATE TABLE `manufacturers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Daten für Tabelle `manufacturers`
+-- Dumping data for table `manufacturers`
 --
 
 INSERT IGNORE INTO `manufacturers` (`id`, `name`, `description`) VALUES
-(1, 'Diamant', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos veniam<br />\r\nsunt quam, nesciunt amet voluptatem doloremque vero, dolore a modi<br />\r\nconsequuntur dolorem? Est architecto nisi dolorem expedita ducimus<br />\r\nassumenda eligendi.'),
-(2, 'Mifa', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos veniam\r\nsunt quam, nesciunt amet voluptatem doloremque vero, dolore a modi\r\nconsequuntur dolorem? Est architecto nisi dolorem expedita ducimus\r\nassumenda eligendi.');
+(7, 'Diamantt', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'),
+(9, 'Mifa', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'),
+(10, 'Gazelle', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'),
+(12, 'cube', 'cube cube cube');
 
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `migrations`
+-- Table structure for table `migrations`
 --
 
 DROP TABLE IF EXISTS `migrations`;
@@ -134,7 +122,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Daten für Tabelle `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT IGNORE INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -146,27 +134,20 @@ INSERT IGNORE INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `pages`
+-- Table structure for table `pages`
 --
 
 DROP TABLE IF EXISTS `pages`;
 CREATE TABLE `pages` (
   `id` int(10) UNSIGNED NOT NULL,
-  `title` varchar(100) NOT NULL,
+  `title` int(100) NOT NULL,
   `body` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Daten für Tabelle `pages`
---
-
-INSERT IGNORE INTO `pages` (`id`, `title`, `body`) VALUES
-(1, 'About', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sint modo partes vitae beatae. Hunc vos beatum; Qua tu etiam inprudens utebare non numquam. Tu quidem reddes; Si longus, levis dictata sunt. Duo Reges: constructio interrete. <br />\r\nTu quidem reddes; Ea possunt paria non esse. Si quae forte-possumus. Est enim effectrix multarum et magnarum voluptatum. Non laboro, inquit, de nomine. Cave putes quicquam esse verius. <br />\r\nDuo enim genera quae erant, fecit tria. Quid, de quo nulla dissensio est? Egone quaeris, inquit, quid sentiam? Quae sequuntur igitur? Ne in odium veniam, si amicum destitero tueri. Quod iam a me expectare noli. <br />\r\nSed fac ista esse non inportuna; Et quod est munus, quod opus sapientiae? Summae mihi videtur inscitiae. Egone quaeris, inquit, quid sentiam? <br />\r\nNegat esse eam, inquit, propter se expetendam. Omnia contraria, quos etiam insanos esse vultis. Unum est sine dolore esse, alterum cum voluptate. Falli igitur possumus. Et quidem, inquit, veh.');
 
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `password_resets`
+-- Table structure for table `password_resets`
 --
 
 DROP TABLE IF EXISTS `password_resets`;
@@ -179,7 +160,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `personal_access_tokens`
+-- Table structure for table `personal_access_tokens`
 --
 
 DROP TABLE IF EXISTS `personal_access_tokens`;
@@ -198,7 +179,7 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `products`
+-- Table structure for table `products`
 --
 
 DROP TABLE IF EXISTS `products`;
@@ -207,24 +188,22 @@ CREATE TABLE `products` (
   `category_id` int(10) UNSIGNED DEFAULT NULL,
   `manufacturer_id` int(10) UNSIGNED NOT NULL,
   `name` varchar(100) NOT NULL,
-  `description` text DEFAULT NULL,
-  `image` varchar(100) DEFAULT NULL
+  `description` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Daten für Tabelle `products`
+-- Dumping data for table `products`
 --
 
-INSERT IGNORE INTO `products` (`id`, `category_id`, `manufacturer_id`, `name`, `description`, `image`) VALUES
-(1, 1, 1, 'Sportfahrrad 28 blau', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos veniam sunt quam, \r\nnesciunt amet voluptatem doloremque vero, dolore a modi\r\nconsequuntur dolorem? \r\nEst architecto nisi dolorem expedita ducimus\r\nassumenda eligendi.', NULL),
-(2, 1, 2, '26 Jugendfahrad gelb', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos veniam<br />\r\nsunt quam, nesciunt amet voluptatem doloremque vero, dolore a modi<br />\r\nconsequuntur dolorem? Est architecto nisi dolorem expedita ducimus<br />\r\nassumenda eligendi.', 'nebel_steg.jpg'),
-(6, 1, 1, 'Test 1', 'vxyvvxcvy', NULL),
-(7, 1, 1, 'Test 2', 'vfgdfgdfgdf', NULL);
+INSERT IGNORE INTO `products` (`id`, `category_id`, `manufacturer_id`, `name`, `description`) VALUES
+(5, 2, 10, 'Diamant', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\r\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'),
+(10, 1, 10, 'Product 22222', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'),
+(11, 2, 9, 'Product 3', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.');
 
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `users`
+-- Table structure for table `users`
 --
 
 DROP TABLE IF EXISTS `users`;
@@ -239,62 +218,83 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- --------------------------------------------------------
+
 --
--- Indizes der exportierten Tabellen
+-- Table structure for table `users2`
+--
+
+DROP TABLE IF EXISTS `users2`;
+CREATE TABLE `users2` (
+  `id` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users2`
+--
+
+INSERT IGNORE INTO `users2` (`id`, `email`, `name`, `password`) VALUES
+(1, 'bakrihamza2209@gmail.com', 'Bakri Hamza', '5f4dcc3b5aa765d61d8327deb882cf99');
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Indizes für die Tabelle `blogs`
+-- Indexes for table `blogs`
 --
 ALTER TABLE `blogs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indizes für die Tabelle `categories`
+-- Indexes for table `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indizes für die Tabelle `failed_jobs`
+-- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Indizes für die Tabelle `features`
+-- Indexes for table `features`
 --
 ALTER TABLE `features`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indizes für die Tabelle `manufacturers`
+-- Indexes for table `manufacturers`
 --
 ALTER TABLE `manufacturers`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`);
 
 --
--- Indizes für die Tabelle `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indizes für die Tabelle `pages`
+-- Indexes for table `pages`
 --
 ALTER TABLE `pages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indizes für die Tabelle `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indizes für die Tabelle `personal_access_tokens`
+-- Indexes for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -302,7 +302,7 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indizes für die Tabelle `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
@@ -310,82 +310,94 @@ ALTER TABLE `products`
   ADD KEY `fk_products` (`manufacturer_id`);
 
 --
--- Indizes für die Tabelle `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT für exportierte Tabellen
+-- Indexes for table `users2`
+--
+ALTER TABLE `users2`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT für Tabelle `blogs`
+-- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT für Tabelle `categories`
+-- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT für Tabelle `failed_jobs`
+-- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT für Tabelle `features`
+-- AUTO_INCREMENT for table `features`
 --
 ALTER TABLE `features`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT für Tabelle `manufacturers`
+-- AUTO_INCREMENT for table `manufacturers`
 --
 ALTER TABLE `manufacturers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT für Tabelle `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT für Tabelle `pages`
+-- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT für Tabelle `personal_access_tokens`
+-- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT für Tabelle `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT für Tabelle `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- Constraints der exportierten Tabellen
+-- AUTO_INCREMENT for table `users2`
+--
+ALTER TABLE `users2`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Constraints for dumped tables
 --
 
 --
--- Constraints der Tabelle `products`
+-- Constraints for table `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `fk_products` FOREIGN KEY (`manufacturer_id`) REFERENCES `manufacturers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;

@@ -2,6 +2,14 @@
 
 @section('title', __('Edit Manufacturer'))
 @section('header', __('Edit Manufacturer'))
+@section('links')
+    <nav>
+        <ul>
+            <li><a href="{{ route('admin.manufacturers.index') }}">{{ __('Back to Manufacturers') }}</a></li>
+            <li><a href="{{ route('admin.manufacturers.create') }}">{{ __('New Entry') }}</a></li>
+        </ul>
+    </nav>
+@endsection
 
 @section('content')
     <div class="right">

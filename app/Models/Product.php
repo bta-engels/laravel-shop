@@ -36,12 +36,14 @@ class Product extends Model
     protected $appends = ['cm'];
     public $timestamps = false;
 
+
     public function getCmAttribute()
     {
         $category = $this->category->name;
         $manufacturer = $this->manufacturer->name;
         return "($category) $manufacturer";
     }
+
 
     public function manufacturer()
     {
