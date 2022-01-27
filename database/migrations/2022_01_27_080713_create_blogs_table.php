@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateManufacturersTable extends Migration
+class CreateBlogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateManufacturersTable extends Migration
      */
     public function up()
     {
-        Schema::create('manufacturers', function (Blueprint $table) {
+        Schema::create('blogs', function (Blueprint $table) {
             $table->integerIncrements('id');
-            $table->string('name',50);
-            $table->text('description')->nullable();
+            $table->string('title',100);
+            $table->text('body')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -27,6 +28,6 @@ class CreateManufacturersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('manufacturers');
+        Schema::dropIfExists('blogs');
     }
 }

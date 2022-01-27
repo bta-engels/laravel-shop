@@ -3,10 +3,10 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use function Symfony\Component\Translation\t;
 
-class ProductFactory extends Factory
+class TodoFactory extends Factory
 {
+
     /**
      * Define the model's default state.
      *
@@ -15,10 +15,8 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            'category_id' => 1,
-            'manufacturer_id' => 1,
-            'name' => $this->faker->name,
-            'description' => $this->faker->text
+            'text' => $this->faker->sentence(3),
+            'done' => $this->faker->boolean,
         ];
     }
 }

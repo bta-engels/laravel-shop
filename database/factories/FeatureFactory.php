@@ -2,10 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\Feature;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class FeatureFactory extends Factory
 {
+    protected $model = Feature::class;
     /**
      * Define the model's default state.
      *
@@ -14,7 +16,8 @@ class FeatureFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->sentence,
+            'body' =>$this->faker->text
         ];
     }
 }
