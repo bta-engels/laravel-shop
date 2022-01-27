@@ -2,11 +2,15 @@
 
 @section('title', __('Products'))
 @section('header', __('Products'))
+@section('links')
+    <nav>
+        <ul>
+            <li><a href="{{ route('admin.products.create') }}">{{ __('New Entry') }}</a></li>
+        </ul>
+    </nav>
+@endsection
 
 @section('content')
-    <div>
-        <a href="{{ route('admin.products.create') }}">{{ __('Neueintrag') }}</a>
-    </div>
     {{ $data->links() }}
     <table class="table">
         <thead>

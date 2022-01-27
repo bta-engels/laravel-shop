@@ -2,6 +2,13 @@
 
 @section('title', __('Edit Product'))
 @section('header', __('Edit Product'))
+@section('links')
+    <nav>
+        <ul>
+            <li><a href="{{ route('admin.products.index') }}">{{ __('Back to Products') }}</a></li>
+        </ul>
+    </nav>
+@endsection
 
 @section('content')
     <div class="right">

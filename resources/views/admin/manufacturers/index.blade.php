@@ -11,7 +11,7 @@
 @endsection
 
 @section('content')
-
+    {{ $data->links() }}
     <table class="table">
         <thead>
             <tr>
