@@ -5,7 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ManufacturerController;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\AdminManufacturerController;
-
+use App\Http\Controllers\Admin\AdminRoutesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,6 +59,10 @@ Route::group([
     Route::post('', [AdminManufacturerController::class,'store'])->name('store');
     Route::put('/{manufacturer}', [AdminManufacturerController::class,'update'])->name('update');
 });
+Route::get('/admin/routes', [AdminRoutesController::class,'index'])
+    ->middleware(['auth'])
+    ->name('admin.routes')
+;
 
 
 Route::get('/dashboard', function () {
