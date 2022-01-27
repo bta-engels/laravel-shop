@@ -21,17 +21,6 @@ class ApiTodoController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param Request $request
-     * @return Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param Todo $todo
@@ -40,6 +29,17 @@ class ApiTodoController extends Controller
     public function show(Todo $todo)
     {
         return response()->json($todo);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function store(Request $request)
+    {
+        //
     }
 
     /**

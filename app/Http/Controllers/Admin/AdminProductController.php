@@ -20,7 +20,9 @@ class AdminProductController extends Controller
      */
     public function index()
     {
-        $data = Product::orderBy('name')->paginate(5);
+        $data = Product::orderBy('name')
+            ->paginate(5)
+        ;
         return view('admin.products.index',compact('data'));
     }
 

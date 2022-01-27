@@ -7,8 +7,7 @@
     <div>
         <a href="{{ route('admin.products.create') }}">{{ __('Neueintrag') }}</a>
     </div>
-    {{$data->links()}}
-
+    {{ $data->links() }}
     <table class="table">
         <thead>
             <tr>
