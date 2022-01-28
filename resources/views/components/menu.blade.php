@@ -41,7 +41,7 @@
             <span class="tooltip">Manufacturers</span>
         </li>
         <li>
-            <a href="#">
+            <a href="">
                 <i class='bx bxs-category'></i>
                 <span class="link_name">Category</span>
             </a>

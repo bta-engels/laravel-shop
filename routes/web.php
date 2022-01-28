@@ -5,7 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ManufacturerController;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\AdminManufacturerController;
-
+use App\Http\Controllers\Admin\AdminCategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,6 +59,21 @@ Route::group([
     Route::post('', [AdminManufacturerController::class,'store'])->name('store');
     Route::put('/{manufacturer}', [AdminManufacturerController::class,'update'])->name('update');
 });
+
+Route::group([
+    'prefix'        => 'admin/categories',
+    'as'            => 'admin.categories.',
+    'middleware'    => 'auth',
+], function () {
+    Route::get('', [AdminCategoryController::class,'index'])->name('index');
+    Route::get('create', [AdminCategoryController::class,'create'])->name('create');
+    Route::get('{category}', [AdminCategoryController::class,'show'])->name('show');
+    Route::get('edit/{category}', [AdminCategoryController::class,'edit'])->name('edit');
+    Route::get('destroy/{category}', [AdminCategoryController::class,'destroy'])->name('destroy');
+    Route::post('', [AdminCategoryController::class,'store'])->name('store');
+    Route::put('/{category}', [AdminCategoryController::class,'update'])->name('update');
+});
+
 
 
 Route::get('/dashboard', function () {

@@ -42,7 +42,7 @@
             <span class="tooltip">{{ __('Manufacturers') }}</span>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ route('admin.categories.index') }}">
                 <i class='bx bxs-category'></i>
                 <span class="link_name">Category</span>
             </a>

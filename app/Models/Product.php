@@ -7,6 +7,7 @@ use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 /**
  * App\Models\Product
@@ -34,7 +35,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Product extends Model
 {
-    use HasFactory;
+    use HasFactory,HasTranslations;
+
+
+    public $translatable = ['name'];
 
     protected $guarded = ['id'];
     protected $appends = ['cm'];
