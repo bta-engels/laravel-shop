@@ -35,10 +35,9 @@ use Spatie\Translatable\HasTranslations;
  */
 class Product extends Model
 {
-    use HasFactory,HasTranslations;
+    use HasFactory;
 
 
-    public $translatable = ['name'];
 
     protected $guarded = ['id'];
     protected $appends = ['cm'];

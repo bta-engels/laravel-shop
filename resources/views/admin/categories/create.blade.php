@@ -11,7 +11,7 @@
 @endsection
 @section('content')
     <div class="right">
-        <x-form method="post" action="{{ route('admin.manufacturers.store') }}">
+        <x-form method="post" action="{{ route('admin.manufacturers.store') }}" enctype="multipart/form-data">
             <x-form-input name="name" label="Name" />
             <x-form-textarea name="description" placeholder="Beschreibung" />
             <x-form-submit />

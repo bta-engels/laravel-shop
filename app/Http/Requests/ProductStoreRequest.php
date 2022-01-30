@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests;
 
+use phpDocumentor\Reflection\Types\Nullable;
+
 class ProductStoreRequest extends MainRequest
 {
     /**
@@ -16,6 +18,7 @@ class ProductStoreRequest extends MainRequest
             'description'   => 'required',
             'category_id'   => 'nullable|numeric',
             'manufacturer_id'   => 'required',
+            'image' =>'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ];
     }
 }

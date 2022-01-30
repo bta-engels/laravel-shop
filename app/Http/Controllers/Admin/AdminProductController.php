@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Manufacturer;
 use App\Models\Product;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 
 
 class AdminProductController extends Controller
@@ -57,8 +58,19 @@ class AdminProductController extends Controller
      */
     public function store(ProductStoreRequest $request)
     {
+       // $path = Storage::disk('public')->put('avatars',$request->image);
+        $filename = time() . '.' . $request->image->extension();
+        //dd($filename);
+        $path = $request->file('image')->storeAs(
+            'imagetest2',
+                  $filename,
+            'public'
+        );
+        //dd($path);
+        $request->image = $path;
         Product::create($request->validated());
         return redirect()->route('admin.products.index');
+
     }
 
     /**

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 /**
  * App\Models\Category
@@ -29,6 +30,9 @@ class Category extends Model
     use HasFactory;
 
 
+
+
+
     protected $guarded = ['id'];
     public $timestamps = false;
 
@@ -36,4 +40,5 @@ class Category extends Model
     {
         return $this->hasMany(Product::class);
     }
+
 }
