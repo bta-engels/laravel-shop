@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Manufacturer;
 use App\Models\Product;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 
 
 class AdminProductController extends Controller
@@ -21,7 +22,7 @@ class AdminProductController extends Controller
     public function index()
     {
         $data = Product::orderBy('name')
-            ->paginate(5)
+            ->paginate(50)
         ;
         return view('admin.products.index',compact('data'));
     }
@@ -60,7 +61,7 @@ class AdminProductController extends Controller
         $validated = $request->validated();
 
         if($request->hasFile('image')) {
-            $path = $request->file('image')->store('images');
+            $path = Storage::disk('images')->putFile('', $request->file('image'));
             $validated['image'] = basename($path);
         }
 
@@ -111,7 +112,7 @@ class AdminProductController extends Controller
         $validated = $request->validated();
 
         if($request->hasFile('image')) {
-            $path = $request->file('image')->store('images');
+            $path = Storage::disk('images')->putFile('', $request->file('image'));
             $validated['image'] = basename($path);
         }
 
