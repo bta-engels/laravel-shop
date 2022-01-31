@@ -16,6 +16,7 @@ class ProductUpdateRequest extends MainRequest
             'description'   => 'required',
             'category_id'   => 'nullable|numeric',
             'manufacturer_id'   => 'required',
+            'image'   => 'nullable|image',
         ];
     }
 }

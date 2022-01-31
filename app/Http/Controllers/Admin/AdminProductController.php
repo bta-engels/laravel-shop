@@ -57,7 +57,14 @@ class AdminProductController extends Controller
      */
     public function store(ProductStoreRequest $request)
     {
-        Product::create($request->validated());
+        $validated = $request->validated();
+
+        if($request->hasFile('image')) {
+            $path = $request->file('image')->store('images');
+            $validated['image'] = basename($path);
+        }
+
+        Product::create($validated);
         return redirect()->route('admin.products.index');
     }
 
@@ -101,7 +108,14 @@ class AdminProductController extends Controller
     */
     public function update(ProductUpdateRequest $request, Product $product)
     {
-        $product->update($request->validated());
+        $validated = $request->validated();
+
+        if($request->hasFile('image')) {
+            $path = $request->file('image')->store('images');
+            $validated['image'] = basename($path);
+        }
+
+        $product->update($validated);
         return redirect()->route('admin.products.index');
     }
 
