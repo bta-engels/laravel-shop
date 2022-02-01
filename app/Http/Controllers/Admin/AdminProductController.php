@@ -11,7 +11,6 @@ use App\Models\Product;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 
-
 class AdminProductController extends Controller
 {
     /**
