@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="pragma" content="no-cache" />
     <meta http-equiv="expires" content="0" />
-    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ mix('js/app.js') }}?t={{ time() }}"></script>
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}" />
-    <link type="text/css" rel="stylesheet" href="{{ mix('css/main.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}?t={{ time() }}" />
+    <link type="text/css" rel="stylesheet" href="{{ mix('css/main.css') }}?t={{ time() }}" />
 </head>
 <body>
 
