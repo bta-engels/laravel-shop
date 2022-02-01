@@ -24,6 +24,7 @@ class ProductRequest extends MainRequest
         foreach($validated as $key => $val) {
             // if $key in translatable array then modify array structur here
         }
+        dd($validated);
 
         return $validated;
     }
