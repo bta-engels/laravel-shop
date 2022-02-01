@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-class ProductUpdateRequest extends MainRequest
+class ProductUpdateRequest extends ProductRequest
 {
     /**
      * Get the validation rules that apply to the request.
