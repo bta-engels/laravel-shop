@@ -22,7 +22,7 @@ class AdminProductController extends Controller
     public function index()
     {
         $data = Product::orderBy('name')
-            ->paginate(8)
+            ->paginate(50)
         ;
         return view('admin.products.index',compact('data'));
     }
@@ -58,15 +58,15 @@ class AdminProductController extends Controller
      */
     public function store(ProductStoreRequest $request)
     {
-        //dd($request->file('image')->hashName());
         $validated = $request->validated();
-        if ($request->hasFile('image')) {
-            $path = Storage::disk('public')->put('images',$request->image);
+
+        if($request->hasFile('image')) {
+            $path = Storage::disk('images')->putFile('', $request->file('image'));
             $validated['image'] = basename($path);
         }
+
         Product::create($validated);
         return redirect()->route('admin.products.index');
-
     }
 
     /**
@@ -110,10 +110,12 @@ class AdminProductController extends Controller
     public function update(ProductUpdateRequest $request, Product $product)
     {
         $validated = $request->validated();
-        if ($request->hasFile('image')) {
-            $path = Storage::disk('public')->put('images',$request->image);
+
+        if($request->hasFile('image')) {
+            $path = Storage::disk('images')->putFile('', $request->file('image'));
             $validated['image'] = basename($path);
         }
+
         $product->update($validated);
         return redirect()->route('admin.products.index');
     }

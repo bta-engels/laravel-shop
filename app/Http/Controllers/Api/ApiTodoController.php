@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ApiTodoStoreRequest;
 use App\Http\Requests\ApiTodoUpdateRequest;
 use App\Models\Todo;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class ApiTodoController extends Controller
@@ -40,10 +41,10 @@ class ApiTodoController extends Controller
      */
     public function store(ApiTodoStoreRequest $request)
     {
-        $result = Todo::create($request->validated());
+        $data = Todo::create($request->validated());
         return response()->json([
-            'result' => !!$result,
-            'data' =>$result,
+            'result' => !!$data,
+            'data'  => $data,
         ]);
     }
 
@@ -59,7 +60,7 @@ class ApiTodoController extends Controller
         $result = $todo->update($request->validated());
         return response()->json([
             'result' => $result,
-            'data' =>$todo->refresh(),
+            'data'  => $todo->refresh(),
         ]);
     }
 
@@ -74,7 +75,7 @@ class ApiTodoController extends Controller
         $result = $todo->delete();
         return response()->json([
             'result' => $result,
-            'data' =>$todo,
+            'data'  => $todo,
         ]);
     }
 }

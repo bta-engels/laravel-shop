@@ -13,7 +13,7 @@
 
 @section('content')
     <div class="right">
-        <x-form action="{{ route('admin.products.update', $product) }}">
+        <x-form action="{{ route('admin.products.update', $product) }}" enctype="multipart/form-data">
             @method('put')
             @bind($product)
             <x-form-select name="category_id" label="Kategorie" :options="$categories" />
@@ -21,7 +21,12 @@
             <x-form-input name="name" label="Name" />
             <x-form-textarea name="description" placeholder="Beschreibung" />
             @endbind
-
+            @if($product->image)
+                <div>
+                    Image: {{ $product->image }}
+                </div>
+            @endif
+            <x-form-input type="file" name="image" label="Image" />
             <x-form-submit />
         </x-form>
     </div>

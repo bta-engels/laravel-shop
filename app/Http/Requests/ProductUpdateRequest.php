@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-class ProductUpdateRequest extends MainRequest
+class ProductUpdateRequest extends ProductRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -16,6 +16,7 @@ class ProductUpdateRequest extends MainRequest
             'description'   => 'required',
             'category_id'   => 'nullable|numeric',
             'manufacturer_id'   => 'required',
+            'image'   => 'nullable|image',
         ];
     }
 }

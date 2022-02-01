@@ -10,6 +10,8 @@ use App\Http\Controllers\ManufacturerController;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\AdminManufacturerController;
 use App\Http\Controllers\Admin\AdminCategoryController;
+use App\Http\Controllers\Admin\AdminRoutesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,6 +31,8 @@ Route::get('lang/{lang}', function ($lang) {
     session()->put('language', $lang);
     return redirect()->back();
 })->name('lang.switch');
+
+Route::get('/admin/routes', [AdminRoutesController::class,'index'])->name('admin.routes');
 
 Route::get('/products', [ProductController::class,'index'])->name('products');
 Route::get('/products/{product}', [ProductController::class,'show'])->name('products.show');

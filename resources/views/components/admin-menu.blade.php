@@ -70,11 +70,11 @@
             <span class="tooltip">Feature</span>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ route('admin.routes') }}">
                 <i class='bx bx-cog'></i>
-                <span class="link_name">Setting</span>
+                <span class="link_name">Routes</span>
             </a>
-            <span class="tooltip">Setting</span>
+            <span class="tooltip">Routes</span>
         </li>
     </ul>
 </div>

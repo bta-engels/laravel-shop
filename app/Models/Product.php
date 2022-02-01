@@ -35,7 +35,7 @@ use Spatie\Translatable\HasTranslations;
  */
 class Product extends Model
 {
-    use HasFactory;
+    use HasFactory, HasTranslations;
 
     //use HasTranslations;
 
@@ -46,6 +46,8 @@ class Product extends Model
     protected $guarded = ['id'];
     protected $appends = ['cm'];
     public $timestamps = false;
+    // all translatable columns as array
+    public $translatable = ['name'];
 
 
     public function getCmAttribute()
