@@ -27,7 +27,8 @@ use Spatie\Translatable\HasTranslations;
  */
 class Category extends Model
 {
-    use HasFactory;
+    use HasFactory,HasTranslations;
+
 
 
 
@@ -35,6 +36,8 @@ class Category extends Model
 
     protected $guarded = ['id'];
     public $timestamps = false;
+    // all translatable columns as array
+    public $translatable = ['name'];
 
     public function products()
     {

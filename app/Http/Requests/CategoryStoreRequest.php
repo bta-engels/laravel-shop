@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
 
-class CategoryStoreRequest extends MainRequest
+
+class CategoryStoreRequest extends CategoryRequest
 {
     /**
      * Get the validation rules that apply to the request.
