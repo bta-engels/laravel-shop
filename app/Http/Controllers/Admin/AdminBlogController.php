@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Interfaces\IAdminController;
 use App\Http\Requests\BlogStoreRequest;
 use App\Http\Requests\BlogUpdateRequest;
 use App\Models\Blog;
 
-class AdminBlogController extends Controller
+class AdminBlogController extends Controller implements IAdminController
 {
     /**
      * Display a listing of the resource.
@@ -20,6 +21,7 @@ class AdminBlogController extends Controller
             ->paginate(5);
         return view('admin.blogs.index',compact('data'));
     }
+
     /**
      * Display the specified resource.
      *
