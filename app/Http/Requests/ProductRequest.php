@@ -27,7 +27,6 @@ class ProductRequest extends MainRequest
                 $validated[$key]=[$locale => $val];
             }
         }
-        dd($validated);
 
         return $validated;
     }
