@@ -37,6 +37,10 @@ class Product extends Model
 {
     use HasFactory;
 
+    //use HasTranslations;
+
+    //public $translatable = ['name'];
+
 
 
     protected $guarded = ['id'];

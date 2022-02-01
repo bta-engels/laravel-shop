@@ -5,7 +5,7 @@
 @section('links')
     <nav>
         <ul>
-            <li><a href="#">{{ __('New Entry') }}</a></li>
+            <li><a href="{{ route('admin.categories.create') }}">{{ __('New Entry') }}</a></li>
         </ul>
     </nav>
 @endsection
@@ -24,7 +24,7 @@
                 @foreach($data as $item)
                     <tr>
                         <td>{{$item->id}}</td>
-                        <td><a href="{{ route('admin.categories.show',$item) }}">{{ $item->name }}</a></td>
+                        <td>{{ $item->name }}</td>
                         <td><a href="{{ route('admin.categories.edit',$item) }}">edit</a></td>
                         <td><a class="delsoft" href="{{ route('admin.categories.destroy',$item) }}">delete</a></td>
                     </tr>

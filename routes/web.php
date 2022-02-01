@@ -1,4 +1,8 @@
 <?php
+
+use App\Http\Controllers\Admin\AdminBlogController;
+use App\Http\Controllers\Admin\AdminFeatureController;
+use App\Http\Controllers\Admin\AdminPageController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
@@ -67,13 +71,53 @@ Route::group([
 ], function () {
     Route::get('', [AdminCategoryController::class,'index'])->name('index');
     Route::get('create', [AdminCategoryController::class,'create'])->name('create');
-    Route::get('{category}', [AdminCategoryController::class,'show'])->name('show');
     Route::get('edit/{category}', [AdminCategoryController::class,'edit'])->name('edit');
     Route::get('destroy/{category}', [AdminCategoryController::class,'destroy'])->name('destroy');
     Route::post('', [AdminCategoryController::class,'store'])->name('store');
     Route::put('/{category}', [AdminCategoryController::class,'update'])->name('update');
 });
 
+Route::group([
+    'prefix'        => 'admin/blogs',
+    'as'            => 'admin.blogs.',
+    'middleware'    => 'auth',
+], function () {
+    Route::get('', [AdminBlogController::class,'index'])->name('index');
+    Route::get('create', [AdminBlogController::class,'create'])->name('create');
+    Route::get('{blog}', [AdminBlogController::class,'show'])->name('show');
+    Route::get('edit/{blog}', [AdminBlogController::class,'edit'])->name('edit');
+    Route::get('destroy/{blog}', [AdminBlogController::class,'destroy'])->name('destroy');
+    Route::post('', [AdminBlogController::class,'store'])->name('store');
+    Route::put('/{blog}', [AdminBlogController::class,'update'])->name('update');
+});
+
+Route::group([
+    'prefix'        => 'admin/pages',
+    'as'            => 'admin.pages.',
+    'middleware'    => 'auth',
+], function () {
+    Route::get('', [AdminPageController::class,'index'])->name('index');
+    Route::get('create', [AdminPageController::class,'create'])->name('create');
+    Route::get('{page}', [AdminPageController::class,'show'])->name('show');
+    Route::get('edit/{page}', [AdminPageController::class,'edit'])->name('edit');
+    Route::get('destroy/{page}', [AdminPageController::class,'destroy'])->name('destroy');
+    Route::post('', [AdminPageController::class,'store'])->name('store');
+    Route::put('/{page}', [AdminPageController::class,'update'])->name('update');
+});
+
+Route::group([
+    'prefix'        => 'admin/features',
+    'as'            => 'admin.features.',
+    'middleware'    => 'auth',
+], function () {
+    Route::get('', [AdminFeatureController::class,'index'])->name('index');
+    Route::get('create', [AdminFeatureController::class,'create'])->name('create');
+    Route::get('{feature}', [AdminFeatureController::class,'show'])->name('show');
+    Route::get('edit/{feature}', [AdminFeatureController::class,'edit'])->name('edit');
+    Route::get('destroy/{feature}', [AdminFeatureController::class,'destroy'])->name('destroy');
+    Route::post('', [AdminFeatureController::class,'store'])->name('store');
+    Route::put('/{feature}', [AdminFeatureController::class,'update'])->name('update');
+});
 
 
 Route::get('/dashboard', function () {

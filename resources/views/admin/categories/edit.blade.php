@@ -1,23 +1,22 @@
 @extends('layouts.main')
 
-@section('title', __('Edit Manufacturer'))
-@section('header', __('Edit Manufacturer'))
+@section('title', __('Edit Category'))
+@section('header', __('Edit Category'))
 @section('links')
     <nav>
         <ul>
-            <li><a href="{{ route('admin.manufacturers.index') }}">{{ __('Back to Manufacturers') }}</a></li>
-            <li><a href="{{ route('admin.manufacturers.create') }}">{{ __('New Entry') }}</a></li>
+            <li><a href="{{ route('admin.categories.index') }}">{{ __('Back to Categories') }}</a></li>
+            <li><a href="{{ route('admin.categories.create') }}">{{ __('New Entry') }}</a></li>
         </ul>
     </nav>
 @endsection
 
 @section('content')
     <div class="right">
-        <x-form action="{{ route('admin.manufacturers.update', $manufacturer) }}">
+        <x-form action="{{ route('admin.categories.update', $category) }}">
             @method('put')
-            @bind($manufacturer)
+            @bind($category)
             <x-form-input name="name" label="Name" />
-            <x-form-textarea name="description" placeholder="Beschreibung" />
             @endbind
 
             <x-form-submit />

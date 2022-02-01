@@ -13,9 +13,11 @@
 @endsection
 
 @section('content')
-    <div>
-        <h3 class="font-bold mx-2">Hersteller: {{ $product->manufacturer->name }}</h3>
-        <p>{!! nl2br($product->description) !!}</p>
+    <div class="show_main">
+        <div>
+            <h3 class="font-bold mx-2">Hersteller: {{ $product->manufacturer->name }}</h3>
+            <p>{!! nl2br($product->description) !!}</p>
+        </div>
         <div>
             <img src="{{ Storage::url($product->image) }}">
         </div>

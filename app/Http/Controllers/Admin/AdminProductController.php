@@ -22,7 +22,7 @@ class AdminProductController extends Controller
     public function index()
     {
         $data = Product::orderBy('name')
-            ->paginate(5)
+            ->paginate(8)
         ;
         return view('admin.products.index',compact('data'));
     }
@@ -58,7 +58,9 @@ class AdminProductController extends Controller
      */
     public function store(ProductStoreRequest $request)
     {
-       // $path = Storage::disk('public')->put('avatars',$request->image);
+        //dd($request->File('image'));
+
+        //$path = Storage::disk('public')->put('avatars',$request->image);
         $filename = time() . '.' . $request->image->extension();
         //dd($filename);
         $path = $request->file('image')->storeAs(
@@ -66,8 +68,14 @@ class AdminProductController extends Controller
                   $filename,
             'public'
         );
-        //dd($path);
+        dd($path,$filename);
         $request->image = $path;
+        //$file = $request->File('image');
+        //$extension = $file->getClientOriginalExtension();
+        //$filename = time().'.'.$extension;
+        //$file->move('uploads/products/'.$filename);
+        //$request->image = $filename;
+        //dd($request->image);
         Product::create($request->validated());
         return redirect()->route('admin.products.index');
 

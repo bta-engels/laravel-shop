@@ -5,15 +5,14 @@
 @section('links')
     <nav>
         <ul>
-            <li><a href="{{ route('admin.manufacturers.index') }}">{{ __('Back to Manufacturers') }}</a></li>
+            <li><a href="{{ route('admin.categories.index') }}">{{ __('Back to Categories') }}</a></li>
         </ul>
     </nav>
 @endsection
 @section('content')
     <div class="right">
-        <x-form method="post" action="{{ route('admin.manufacturers.store') }}" enctype="multipart/form-data">
+        <x-form method="post" action="{{ route('admin.categories.store') }}" enctype="multipart/form-data">
             <x-form-input name="name" label="Name" />
-            <x-form-textarea name="description" placeholder="Beschreibung" />
             <x-form-submit />
         </x-form>
     </div>

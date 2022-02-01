@@ -1,13 +1,13 @@
 
 @extends('layouts.main')
 
-@section('title', __('Manufacturer'))
-@section('header', $manufacturer->name)
+@section('title', __('Category'))
+@section('header', $categories->name)
 @section('links')
     <nav>
         <ul>
-            <li><a href="{{ route('admin.manufacturers.index') }}">{{ __('Back to Manufacturers') }}</a></li>
-            <li><a href="{{ route('admin.manufacturers.create') }}">{{ __('New Entry') }}</a></li>
+            <li><a href="{{ route('admin.categories.index') }}">{{ __('Back to Categories') }}</a></li>
+            <li><a href="{{ route('admin.categories.create') }}">{{ __('New Entry') }}</a></li>
         </ul>
     </nav>
 @endsection

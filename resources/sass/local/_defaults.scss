@@ -7,8 +7,10 @@
 body {
 	min-height: 100vh;
 	width: 100%;
-	overflow: hidden;
+	overflow-y: scroll;
+	scroll-behavior: smooth;
 	transition: all .5s ease;
+
 }
 .content {
 	margin-left: 80px;
@@ -23,6 +25,54 @@ body {
 .main{
 	width: 95%;
 	padding: 15px 40px 15px 20px;
+}
+.show_main{
+	display: grid;
+	grid-template-columns: 70% 30%;
+	grid-gap: 1em;
+	img{
+		width: 150px;
+		height: 150px;
+	}
+}
+.contBox {
+	display: grid;
+	gap: 2rem;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
+	margin-top: 1rem;
+	padding: 2.5rem 2.5rem 0 2.5rem;
+
+	.box {
+		background: #fff;
+		border: 2px solid rgb(209, 209, 212);
+		border-radius: 5%;
+		padding: 2rem;
+		text-align: center;
+		float: right;
+
+		.h2 {
+			color: rgb(94, 170, 221);
+			font-size: 1.2rem;
+			margin-bottom: 0.3rem;
+		}
+		p {
+			color: black;
+			font-size: 0.7rem;
+			padding: 0.3rem;
+		}
+		a {
+			color: rgb(94, 170, 221);
+			cursor: pointer;
+			display: block;
+			font-size: 1rem;
+			padding: 10px 0;
+			text-decoration: none;
+		}
+		div {
+			display: flex;
+			justify-content: space-around;
+		}
+	}
 }
 header {
 	display: flex;
