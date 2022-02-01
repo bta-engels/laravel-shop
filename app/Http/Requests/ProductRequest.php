@@ -8,7 +8,8 @@ class ProductRequest extends MainRequest
 {
     public function validated()
     {
-        $translatables = (new Product)->getTranslatableAttributes();
+        $product = new Product;
+        $translatables = $product->getTranslatableAttributes();
         $locale = app()->getLocale();
 
         $validated = collect(parent::validated())->map(function ($item, $key) use ($translatables, $locale) {
