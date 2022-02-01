@@ -2,14 +2,15 @@
 
 namespace App\Http\Requests;
 
-use App\Models\Product;
+use App\Models\Category;
 
-class ProductRequest extends MainRequest
+
+class CategoryRequest extends MainRequest
 {
     public function validated()
     {
-        $product = new Product;
-        $translatables = $product->getTranslatableAttributes();
+        $category = new Category();
+        $translatables = $category->getTranslatableAttributes();
         $locale = app()->getLocale();
         $validated = parent::validated();
 /*
@@ -27,7 +28,6 @@ class ProductRequest extends MainRequest
                 $validated[$key]=[$locale => $val];
             }
         }
-        dd($validated);
 
         return $validated;
     }

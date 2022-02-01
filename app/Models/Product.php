@@ -37,9 +37,7 @@ class Product extends Model
 {
     use HasFactory, HasTranslations;
 
-    //use HasTranslations;
 
-    //public $translatable = ['name'];
 
 
 
