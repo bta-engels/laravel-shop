@@ -58,25 +58,13 @@ class AdminProductController extends Controller
      */
     public function store(ProductStoreRequest $request)
     {
-        //dd($request->File('image'));
-
-        //$path = Storage::disk('public')->put('avatars',$request->image);
-        $filename = time() . '.' . $request->image->extension();
-        //dd($filename);
-        $path = $request->file('image')->storeAs(
-            'imagetest2',
-                  $filename,
-            'public'
-        );
-        dd($path,$filename);
-        $request->image = $path;
-        //$file = $request->File('image');
-        //$extension = $file->getClientOriginalExtension();
-        //$filename = time().'.'.$extension;
-        //$file->move('uploads/products/'.$filename);
-        //$request->image = $filename;
-        //dd($request->image);
-        Product::create($request->validated());
+        //dd($request->file('image')->hashName());
+        $validated = $request->validated();
+        if ($request->hasFile('image')) {
+            $path = Storage::disk('public')->put('images',$request->image);
+            $validated['image'] = basename($path);
+        }
+        Product::create($validated);
         return redirect()->route('admin.products.index');
 
     }
@@ -121,7 +109,12 @@ class AdminProductController extends Controller
     */
     public function update(ProductUpdateRequest $request, Product $product)
     {
-        $product->update($request->validated());
+        $validated = $request->validated();
+        if ($request->hasFile('image')) {
+            $path = Storage::disk('public')->put('images',$request->image);
+            $validated['image'] = basename($path);
+        }
+        $product->update($validated);
         return redirect()->route('admin.products.index');
     }
 

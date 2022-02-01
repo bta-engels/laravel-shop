@@ -19,7 +19,7 @@
             <p>{!! nl2br($product->description) !!}</p>
         </div>
         <div>
-            <img src="{{ Storage::url($product->image) }}">
+            <img src="/storage/images/{{ $product->image }}">
         </div>
     </div>
 @endsection
