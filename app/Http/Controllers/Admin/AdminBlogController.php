@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\interfaces\IAdminController;
 use App\Http\Requests\BlogStoreRequest;
 use App\Http\Requests\BlogUpdateRequest;
 use App\Models\Blog;
 
-class AdminBlogController extends Controller
+
+class AdminBlogController extends Controller implements IAdminController
 {
     /**
      * Display a listing of the resource.
