@@ -23,6 +23,9 @@ class ProductRequest extends MainRequest
 */
         foreach($validated as $key => $val) {
             // if $key in translatable array then modify array structur here
+            if(in_array($key, $translatables)) {
+                return [$locale => $val];
+            }
         }
 
         return $validated;
