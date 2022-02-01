@@ -1,17 +1,16 @@
 @extends('layouts.main')
 
-@section('title', __('Manufacturers'))
-@section('header', __('Manufacturers'))
+@section('title', __('Categories'))
+@section('header', __('Categories'))
 @section('links')
     <nav>
         <ul>
-            <li><a href="{{ route('admin.manufacturers.create') }}">{{ __('New Entry') }}</a></li>
+            <li><a href="{{ route('admin.categories.create') }}">{{ __('New Entry') }}</a></li>
         </ul>
     </nav>
 @endsection
 
 @section('content')
-    {{ $data->links() }}
     <table class="table">
         <thead>
             <tr>
@@ -25,10 +24,9 @@
                 @foreach($data as $item)
                     <tr>
                         <td>{{$item->id}}</td>
-                        <td><a href="{{ route('admin.manufacturers.show',$item) }}">{{ $item->name }}</a></td>
-                        <td><a href="{{ route('admin.manufacturers.edit',$item) }}">edit</a></td>
-
-                        <td><a class="delsoft" href="{{ route('admin.manufacturers.destroy',$item) }}">delete</a></td>
+                        <td>{{ $item->name }}</td>
+                        <td><a href="{{ route('admin.categories.edit',$item) }}">edit</a></td>
+                        <td><a class="delsoft" href="{{ route('admin.categories.destroy',$item) }}">delete</a></td>
                     </tr>
                 @endforeach
             @endif

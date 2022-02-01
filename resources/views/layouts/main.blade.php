@@ -13,17 +13,21 @@
     <link type="text/css" rel="stylesheet" href="{{ mix('css/main.css') }}" />
 </head>
 <body>
+
 @auth
     <x-admin-menu />
 @else
     <x-menu />
 @endauth
 <div class="content">
+<!-- Page Heading -->
+
+
     <header >
         <div>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 @section('header')
-                    Unser Header<br>
+
                 @show
             </h2>
         </div>
@@ -41,25 +45,18 @@
                 </span>
             </h2>
         </div>
-    </header>
 
+    </header>
     <div class="main_content">
         <div class="links">
             @yield('links')
         </div>
 
         <!-- Page Content -->
-        <main class="block">
-            <div class="py-2">
-                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div class="bg-white">
-                        <div class="p-6 bg-white border-b border-gray-200">
-                            @yield('content')
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
+
+        <div class="main">
+            @yield('content')
+        </div>
     </div>
 </div>
 

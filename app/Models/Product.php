@@ -37,6 +37,12 @@ class Product extends Model
 {
     use HasFactory, HasTranslations;
 
+    //use HasTranslations;
+
+    //public $translatable = ['name'];
+
+
+
     protected $guarded = ['id'];
     protected $appends = ['cm'];
     public $timestamps = false;

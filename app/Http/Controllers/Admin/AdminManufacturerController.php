@@ -17,7 +17,8 @@ class AdminManufacturerController extends Controller
      */
     public function index()
     {
-        $data = Manufacturer::all();
+        $data = Manufacturer::orderBy('name')
+            ->paginate(5);
         return view('admin.manufacturers.index',compact('data'));
     }
 

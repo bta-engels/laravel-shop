@@ -42,32 +42,32 @@
             <span class="tooltip">{{ __('Manufacturers') }}</span>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ route('admin.categories.index') }}">
                 <i class='bx bxs-category'></i>
                 <span class="link_name">Category</span>
             </a>
             <span class="tooltip">Category</span>
         </li>
         <li>
-            <a href="#">
-                <i class='bx bx-folder-minus'></i>
-                <span class="link_name">File Manager</span>
+            <a href="{{ route('admin.blogs.index') }}">
+                <i class='bx bxl-blogger'></i>
+                <span class="link_name">Blogs</span>
             </a>
-            <span class="tooltip">File Manager</span>
+            <span class="tooltip">Blogs</span>
         </li>
         <li>
-            <a href="#">
-                <i class='bx bx-cart-alt'></i>
-                <span class="link_name">Order</span>
+            <a href="{{ route('admin.pages.index') }}">
+                <i class='bx bx-spreadsheet'></i>
+                <span class="link_name">Pages</span>
             </a>
-            <span class="tooltip">Order</span>
+            <span class="tooltip">Pages</span>
         </li>
         <li>
-            <a href="#">
-                <i class='bx bx-heart'></i>
-                <span class="link_name">Saved</span>
+            <a href="{{ route('admin.features.index') }}">
+                <i class='bx bxs-report'></i>
+                <span class="link_name">Feature</span>
             </a>
-            <span class="tooltip">Saved</span>
+            <span class="tooltip">Feature</span>
         </li>
         <li>
             <a href="{{ route('admin.routes') }}">

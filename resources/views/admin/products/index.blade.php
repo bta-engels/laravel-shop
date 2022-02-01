@@ -2,11 +2,15 @@
 
 @section('title', __('Products'))
 @section('header', __('Products'))
+@section('links')
+    <nav>
+        <ul>
+            <li><a href="{{ route('admin.products.create') }}">{{ __('New Entry') }}</a></li>
+        </ul>
+    </nav>
+@endsection
 
 @section('content')
-    <div>
-        <a href="{{ route('admin.products.create') }}">{{ __('Neueintrag') }}</a>
-    </div>
     {{ $data->links() }}
     <table class="table">
         <thead>
@@ -22,7 +26,7 @@
                 @foreach($data as $item)
                     <tr>
                         <td>{{$item->id}}</td>
-                        <td><a href="{{ route('admin.products.show',$item) }}">{{ $item->name }}</a></td>
+                        <td><a href="{{ route('admin.products.show',$item) }}">{{ $item->name, }}</a></td>
                         <td>{{ $item->cm }}</td>
                         <td><a href="{{ route('admin.products.edit',$item) }}">edit</a></td>
                         <td><a class="delsoft" href="{{ route('admin.products.destroy',$item) }}">delete</a></td>
