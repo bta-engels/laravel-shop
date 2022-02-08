@@ -133,4 +133,7 @@ Route::get('logout', function () {
     return response()->redirectTo('/');
 })->name('my-logout');
 
+Route::fallback(function () {
+    return 'Falsche Route';
+});
 require __DIR__.'/auth.php';
