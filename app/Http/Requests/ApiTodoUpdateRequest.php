@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Todo;
+
 class ApiTodoUpdateRequest extends ApiTodoRequest
 {
     /**

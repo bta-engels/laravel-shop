@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Models\Todo;
 
-class ApiTodoStoreRequest extends ApiTodoRequest
+class ApiTodoStoreRequest extends MainRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -21,10 +21,13 @@ class ApiTodoStoreRequest extends ApiTodoRequest
 
     public function validated()
     {
+        if(!request()->header('X-Lang')) {
+            return parent::validated();
+        }
         $model = new Todo();
         $translatables = $model->getTranslatableAttributes();
         $validated = parent::validated();
-        $locales = config('languages.lang');
+        $locales = config('language.locales');
 
         foreach($validated as $key => $val) {
             // if $key in translatable array then modify array structur here

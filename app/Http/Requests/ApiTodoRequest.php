@@ -13,6 +13,9 @@ class ApiTodoRequest extends ApiMainRequest
 
     public function validated()
     {
+        if(!request()->header('X-Lang')) {
+            return parent::validated();
+        }
         $model = new Todo();
         $translatables = $model->getTranslatableAttributes();
         $locale = app()->getLocale();
