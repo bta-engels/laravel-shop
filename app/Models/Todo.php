@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
+//use App\Traits\HasTranslations;
+use Spatie\Translatable\HasTranslations;
 
 /**
  * App\Models\Todo
@@ -27,9 +29,11 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Todo whereText($value)
  * @method static Builder|Todo whereUpdatedAt($value)
  * @mixin Eloquent
+ * @property-read array $translations
  */
 class Todo extends Model
 {
-    use HasFactory;
+    use HasFactory, HasTranslations;
     protected $guarded = ['id'];
+    public $translatable = ['text'];
 }

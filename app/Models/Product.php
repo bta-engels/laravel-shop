@@ -32,6 +32,7 @@ use Spatie\Translatable\HasTranslations;
  * @property-read Category $category
  * @property-read mixed $cm
  * @method static ProductFactory factory(...$parameters)
+ * @property-read array $translations
  */
 class Product extends Model
 {
@@ -42,7 +43,6 @@ class Product extends Model
     public $timestamps = false;
     // all translatable columns as array
     public $translatable = ['name'];
-
 
     public function getCmAttribute()
     {

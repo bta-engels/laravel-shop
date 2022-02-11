@@ -2,23 +2,22 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\ApiTodoStoreRequest;
-use App\Http\Requests\ApiTodoUpdateRequest;
 use App\Models\Todo;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Http\Requests\ApiTodoStoreRequest;
+use App\Http\Requests\ApiTodoUpdateRequest;
 
-class ApiTodoController extends Controller
+class ApiTodoController extends ApiController
 {
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = Todo::all();
+        $data = Todo::orderBy('created_at','desc')->get();
         return response()->json($data);
     }
 

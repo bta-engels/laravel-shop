@@ -24,6 +24,7 @@ use Spatie\Translatable\HasTranslations;
  * @method static Builder|Category whereId($value)
  * @method static Builder|Category whereName($value)
  * @mixin Eloquent
+ * @property-read array $translations
  */
 class Category extends Model
 {
