@@ -10,8 +10,9 @@ class ApiController
 
     public function __construct(Request $request)
     {
-        if($request->header('X-Lang')) {
-            app()->setLocale($request->header('X-Lang'));
+        $localeHeaderName = config('language.api.locale.headerName');
+        if($request->header($localeHeaderName)) {
+            app()->setLocale($request->header($localeHeaderName));
             $this->translate = true;
         }
     }

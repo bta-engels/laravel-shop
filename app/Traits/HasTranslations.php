@@ -16,8 +16,8 @@ trait HasTranslations
     public function toArray()
     {
         $attributes = parent::toArray();
-
-        if(request()->header('X-Lang')) {
+        $localeHeaderName = config('language.api.locale.headerName');
+        if(request()->header($localeHeaderName)) {
             return $attributes;
         }
 
